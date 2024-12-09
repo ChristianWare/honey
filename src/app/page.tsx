@@ -1,10 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
 
 export default function Home() {
   return (
-   <main>
-    <h1>Yo</h1>
-   </main>
+    <main>
+      <h1>Insurance designed <br /> for life in motion.</h1>
+    </main>
   );
 }
