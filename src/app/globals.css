@@ -1,18 +1,12 @@
 :root {
   --black: #333438;
-  --green: #37313b;
-  --lightBlack: #808080;
-  --green3: #aeff12;
-  --green3b: #7fc005;
-  --tan: #f2efe9;
-  --tan2: #e1e1d9;
-  --tan3: #c4c4bc;
   --white: #fffdfb;
-  --gray: #dfdddd;
-  --gray2: #d7d0d0;
-  --gray3: #93969e;
-  --purple: #5f46df;
-  --purple2: #2703db;
+  --yellow: #f3fd00;
+  --olive: #3f422e;
+  --lightOlive: #e6e7d9;
+  --tan: #f0d39e;
+  --orange: #e0582a;
+  --teal: #427679;
 }
 
 * {
@@ -21,7 +15,7 @@
   box-sizing: border-box;
   text-decoration: none;
   line-height: 120%;
-  font-family: var(--suisseReg);
+  font-family: var(--RaptorTextSemiBold);
   scroll-behavior: smooth;
   scroll-margin-top: 20px;
   overscroll-behavior: none;
