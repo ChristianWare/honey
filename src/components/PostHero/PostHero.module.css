@@ -18,3 +18,20 @@
 .heading {
   color: var(--white);
 }
+
+@media screen and (max-width: 1068px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* @media screen and (max-width: 568px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .heading,
+  .left {
+    text-align: center;
+  }
+} */
