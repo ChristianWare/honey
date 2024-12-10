@@ -1,7 +1,7 @@
 :root {
   --black: #333438;
   --white: #fffdfb;
-  --yellow: #f3fd00;
+  --yellow: #ffe31a;
   --olive: #3f422e;
   --lightOlive: #e6e7d9;
   --tan: #f0d39e;
@@ -56,8 +56,8 @@ span {
 
 h1 {
   font-size: 7rem;
-  line-height: 0.93;
-  letter-spacing: -2px;
+  line-height: 105%;
+  letter-spacing: -1px;
 }
 
 h2 {

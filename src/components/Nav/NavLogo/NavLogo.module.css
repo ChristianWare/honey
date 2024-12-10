@@ -1,0 +1,10 @@
+.logo {
+  color: var(--black);
+  display: block !important;
+  font-size: 2rem;
+  z-index: 1001;
+}
+
+.black {
+  color: var(--black);
+}
