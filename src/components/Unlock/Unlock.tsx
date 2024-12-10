@@ -5,6 +5,7 @@ import Unlock1 from "../../../public/images/unlock1.jpg";
 import Unlock2 from "../../../public/images/unlock2.jpg";
 import Unlock3 from "../../../public/images/unlock3.jpg";
 import Button from "../Button/Button";
+import ScrollHorizontalText from "../ScrollHorizontalText/ScrollHorizontalText";
 
 const data = [
   {
@@ -55,6 +56,10 @@ const Unlock = () => {
           </div>
         </div>
       </LayoutWrapper>
+      <ScrollHorizontalText
+        text='INSURANCE DESIGNED FOR LIFE IN MOTION
+'
+      />
     </section>
   );
 };
