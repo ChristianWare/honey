@@ -3,7 +3,6 @@ import Image from "next/image";
 import HeroImage from "../../../public/images/honey.png";
 import Nav from "../Nav/Nav";
 import Button from "../Button/Button";
-// import ContentPadding from "../ContentPadding/ContentPadding";
 
 const Hero = () => {
   return (
@@ -11,9 +10,7 @@ const Hero = () => {
       <section className={styles.container}>
         <div className={styles.imgOverlay}></div>
         <div className={styles.navContainer}>
-          {/* <ContentPadding> */}
             <Nav />
-          {/* </ContentPadding> */}
         </div>
         <Image
           src={HeroImage}

@@ -36,6 +36,30 @@ export default function RootLayout({
         className={`${RaptorMonoSemiBold.variable} ${RaptorTextSemiBold.variable} ${RaptorMonoMedium.variable}`}
       >
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener("DOMContentLoaded", () => {
+                const header = document.querySelector("header");
+                let lastScrollY = window.scrollY;
+
+                window.addEventListener("scroll", () => {
+                  if (!header) return;
+
+                  const currentScrollY = window.scrollY;
+
+                  if (currentScrollY > lastScrollY) {
+                    header.style.transform = "translateY(-170%)";
+                  } else {
+                    header.style.transform = "translateY(0)";
+                  }
+
+                  lastScrollY = currentScrollY > 0 ? currentScrollY : 0; // Prevent negative scroll
+                });
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );
