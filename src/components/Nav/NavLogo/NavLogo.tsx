@@ -9,7 +9,8 @@ interface NavProps {
 const NavLogo = ({ color = "" }: NavProps) => {
   return (
     <Link href='/' className={`${styles.logo} ${styles[color]}`}>
-      <Bee className={styles.icon} /> Honey
+      Honey
+      <Bee className={styles.icon} />
     </Link>
   );
 };

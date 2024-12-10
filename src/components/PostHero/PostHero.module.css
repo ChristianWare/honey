@@ -1,0 +1,20 @@
+.container {
+  background-color: var(--olive);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 5rem;
+}
+
+.left {
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1.6;
+  width: 90%;
+}
+
+.heading {
+  color: var(--white);
+}

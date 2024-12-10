@@ -1,18 +1,18 @@
 .logo {
   color: var(--black);
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   font-size: 2.5rem;
   letter-spacing: -1px;
   z-index: 1001;
 }
 
 .icon {
-  width: 4rem;
-  height: 4rem;
+  width: 2.7rem;
+  height: 2.7rem;
   color: var(--black);
 }
 
