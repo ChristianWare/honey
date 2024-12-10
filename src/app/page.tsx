@@ -1,3 +1,4 @@
+import GridSection from "@/components/GridSection/GridSection";
 import Hero from "@/components/Hero/Hero";
 import PostHero from "@/components/PostHero/PostHero";
 import Unlock from "@/components/Unlock/Unlock";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <PostHero />
       <Unlock />
+      <GridSection />
     </main>
   );
 }

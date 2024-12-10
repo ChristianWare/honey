@@ -22,6 +22,7 @@
 
 .heading {
   width: 90%;
+  font-size: 4.5rem;
 }
 
 .copy {
@@ -59,12 +60,11 @@
 }
 
 @media screen and (max-width: 568px) {
-  
   .title {
     text-decoration: underline;
   }
-  
-    .btnContainer {
+
+  .btnContainer {
     display: grid;
     width: 100%;
   }
