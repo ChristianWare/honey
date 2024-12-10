@@ -9,7 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 3rem;
   padding-left: 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -32,7 +31,7 @@
 .navMenu {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 2rem;
   list-style: none;
   width: 100%;
@@ -44,11 +43,13 @@
 }
 
 .navItem {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-transform: capitalize;
   user-select: none;
   white-space: nowrap;
   color: var(--black);
+  font-family: var(--RaptorMonoSemiBold);
+  text-transform: uppercase;
 }
 
 .navItem:hover {
@@ -73,7 +74,7 @@
   height: 3px;
   margin: 5px auto;
   border-radius: 15px;
-  background-color: var(--white);
+  background-color: var(--black);
   transition: 0.4s all ease-in;
 }
 
@@ -81,7 +82,7 @@
   color: var(--black);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1068px) {
   .logo {
     font-size: 2rem;
   }
@@ -90,7 +91,6 @@
     position: relative;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
     gap: 3rem;
     z-index: 1000;
   }
@@ -133,11 +133,12 @@
     display: block;
     cursor: pointer;
     z-index: 1001;
+    left: -20px;
   }
 
   .hamburger.active .whiteBar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-    background-color: var(--white);
+    /* background-color: var(--white); */
   }
 
   .hamburger.active .whiteBar:nth-child(2) {
@@ -146,7 +147,7 @@
 
   .hamburger.active .whiteBar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-    background-color: var(--white);
+    /* background-color: var(--white); */
   }
 
   .black {

@@ -10,11 +10,19 @@ interface NavProps {
 export default async function Nav({ color = "" }: NavProps) {
   return (
     <header className={styles.header}>
-      <NavLogo color={color} />
-      <div className={styles.right}>
-        <NavLinks color={color} />
-        <NavIcons color={color} />
+      <div className={styles.content}>
+        <div className={styles.one}>
+          <NavLinks color={color} />
+        </div>
+        {/* <div className={styles.right}> */}
+        <div className={styles.two}>
+          <NavLogo color={color} />
+        </div>
+        <div className={styles.three}>
+          <NavIcons color={color} />
+        </div>
       </div>
+      {/* </div> */}
     </header>
   );
 }
