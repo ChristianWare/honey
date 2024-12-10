@@ -7,6 +7,8 @@
   --tan: #f0d39e;
   --orange: #e0582a;
   --teal: #427679;
+    --gray: #f2f2f2;
+
 }
 
 * {
@@ -62,21 +64,18 @@ h1 {
 
 h2 {
   font-size: 4.5rem;
-  font-weight: 500;
   line-height: 1;
   letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   line-height: 1em;
-  font-weight: 500;
   /* letter-spacing: -0.01em; */
 }
 
 h4 {
   font-size: 2.5rem;
-  font-weight: 500;
   letter-spacing: -0.04em;
 }
 
@@ -88,7 +87,6 @@ h5 {
 
 h6 {
   font-size: 2rem;
-  font-weight: 500;
   letter-spacing: -0.04em;
 }
 

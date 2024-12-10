@@ -3,6 +3,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import styles from "./Button.module.css";
+import Arrow from "../../../public/icons/leftArrow.svg";
 
 interface ButtonProps {
   href: string;
@@ -40,8 +41,8 @@ const Button: FC<ButtonProps> = ({
         target={target}
         download={download}
       >
-        {pulse && <span className={styles.pulse}></span>}{" "}
-        {text}
+        {pulse && <span className={styles.pulse}></span>} {text}
+     <Arrow className={styles.arrow} />
       </Link>
     </button>
   );
