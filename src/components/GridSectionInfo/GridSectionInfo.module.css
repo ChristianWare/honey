@@ -11,15 +11,15 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  border: 1px solid var(--olive2);
+  border: 2px solid var(--olive2);
   border-radius: 10px;
   padding: 3rem;
-  background-color: var(--tan);
+  background-color: var(--olive);
 }
 
 .title,
 .copy {
-  color: var(--olive);
+  color: var(--tan);
 }
 
 .title {

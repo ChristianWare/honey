@@ -23,6 +23,7 @@
 .heading {
   width: 90%;
   font-size: 4.5rem;
+  margin-bottom: 30rem;
 }
 
 .copy {
@@ -56,6 +57,10 @@
 
   .left {
     position: static;
+  }
+
+  .heading {
+    margin-bottom: 0rem;
   }
 }
 
