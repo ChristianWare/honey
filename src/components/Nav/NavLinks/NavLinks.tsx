@@ -23,8 +23,8 @@ const navItems = [
   },
 
   {
-    text: "Support",
-    href: "/support",
+    text: "Contact",
+    href: "/contact",
   },
 ];
 
