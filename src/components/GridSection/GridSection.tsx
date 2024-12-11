@@ -3,6 +3,7 @@ import LayoutWrapper from "../LayoutWrapper";
 import styles from "./GridSection.module.css";
 import Link from "next/link";
 import Img1 from "../../../public/images/unlock1.jpg";
+import GridSectionInfo from "../GridSectionInfo/GridSectionInfo";
 
 const GridSection = () => {
   return (
@@ -89,6 +90,7 @@ const GridSection = () => {
             </div>
           </div>
         </div>
+        <GridSectionInfo />
       </LayoutWrapper>
     </section>
   );
