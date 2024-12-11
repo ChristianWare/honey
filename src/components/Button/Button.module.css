@@ -22,30 +22,30 @@
   z-index: 1;
   width: 100%;
   transition: all 0.3s ease-in;
-  overflow: hidden; /* Ensure pseudo-element stays within bounds */
-  border: 1px solid transparent; /* Start with transparent border */
-  transition: color 0.3s ease-in, border-color 0.3s ease-in; /* Animate border */
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: color 0.3s ease-in, border-color 0.3s ease-in;
 }
 .btn::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -100%; /* Start off-screen */
+  left: -100%;
   width: 100%;
   height: 100%;
   background-color: var(--black);
-  z-index: -1; /* Place it behind the button content */
+  z-index: -1;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(0); /* Initial state */
+  transform: translateX(0);
 }
 
 .btn:hover::before {
-  transform: translateX(100%); /* Slide in from the left */
+  transform: translateX(100%);
 }
 
 .btn:hover {
-  color: var(--white); /* Change text color */
-  border-color: var(--yellow); /* Make border visible */
+  color: var(--white);
+  border-color: var(--yellow);
 }
 
 .yellow {
@@ -53,78 +53,13 @@
   border: 1px solid var(--black);
 }
 
-.white {
-  color: var(--black);
-  background-color: var(--white);
-}
-
-/* Default pulsating circle */
-.pulseWrapper:hover .pulse {
-  background-color: var(--white);
-}
-
-.pulse {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: var(--umber);
-  animation: pulse-animation 1.5s infinite;
-  position: relative;
-}
-
-/* Keyframes for pulsating effect */
-@keyframes pulse-animation {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-/* White button hover state */
-.white:hover {
-  background-color: var(--umber);
+.teal {
+  background-color: var(--teal);
   color: var(--white);
-}
-
-/* Change pulsating circle color when hovering over the button */
-.white:hover .pulse {
-  background-color: var(--white);
-}
-.whiteOutline {
-  border: 2px solid var(--white);
-  color: var(--white);
-  background-color: var(--umber);
-}
-
-/* WhiteOutline button hover state */
-.whiteOutline:hover {
-  background-color: var(--white);
-  color: var(--umber);
-  border: 2px solid var(--umber);
-}
-
-/* Default pulsating circle for whiteOutline */
-.whiteOutline .pulse {
-  background-color: var(--white); /* White pulse by default */
-}
-
-/* Pulsating circle hover effect for whiteOutline */
-.whiteOutline:hover .pulse {
-  background-color: var(--umber); /* Remains white on hover */
 }
 
 .arrow {
   transform: rotate(180deg);
   width: 2.5rem;
   height: 2.5rem;
-  /* position: absolute;
-  right: 13px; */
 }

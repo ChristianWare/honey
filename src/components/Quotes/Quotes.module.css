@@ -63,6 +63,16 @@
   }
 
   .bottom .right {
-    order: 0
+    order: 0;
+  }
+
+  .imgContainer {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .imgContainer {
+    height: 300px;
   }
 }
