@@ -57,35 +57,35 @@ span {
 }
 
 h1 {
-  font-size: 7.5rem;
+  font-size: 5.6rem;
   line-height: 105%;
   letter-spacing: -1px;
 }
 
 h2 {
-  font-size: 5.5rem;
+  font-size: 4.2rem;
   line-height: 1.125;
   letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 3.2rem;
+  font-size: 3.1rem;
   /* letter-spacing: -0.01em; */
 }
 
 h4 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   letter-spacing: -0.04em;
 }
 
 h5 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
   letter-spacing: -0.04em;
 }
 
 h6 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: -0.04em;
 }
 
@@ -162,6 +162,18 @@ textarea:focus {
   p {
     hyphens: auto;
   }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.7rem;
+  } 
 }
 
 /* Only use in production */
@@ -171,6 +183,5 @@ textarea:focus {
   }
   h2 {
     letter-spacing: -1px;
-    
   }
 }
