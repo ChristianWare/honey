@@ -12,14 +12,13 @@
   align-items: center;
   justify-content: center;
   animation: scroll 30s linear infinite;
-  gap: 2rem;
+  gap: 10rem;
 }
 
 .spanContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
 }
 
 .text {
@@ -38,6 +37,7 @@
 .icon {
   width: 5rem;
   height: 5rem;
+  color: var(--olive);
 }
 
 @keyframes scroll {

@@ -57,8 +57,7 @@ const Unlock = () => {
         </div>
       </LayoutWrapper>
       <ScrollHorizontalText
-        text='INSURANCE DESIGNED FOR LIFE IN MOTION
-'
+        text='INSURANCE DESIGNED FOR LIFE IN MOTION'
       />
     </section>
   );
