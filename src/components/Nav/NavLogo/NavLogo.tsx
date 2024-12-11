@@ -4,13 +4,18 @@ import Bee from "../../../../public/icons/bee.svg";
 
 interface NavProps {
   color?: string;
+  size?: string;
+  iconSize?: string;
 }
 
-const NavLogo = ({ color = "" }: NavProps) => {
+const NavLogo = ({ color = "", size = "", iconSize = "" }: NavProps) => {
   return (
-    <Link href='/' className={`${styles.logo} ${styles[color]}`}>
+    <Link
+      href='/'
+      className={`${styles.logo} ${styles[color]} ${styles[size]}`}
+    >
       Honey
-      <Bee className={styles.icon} />
+      <Bee className={`${styles.icon} ${styles[iconSize]}`} />
     </Link>
   );
 };

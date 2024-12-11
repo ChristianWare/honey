@@ -1,7 +1,6 @@
 .logo {
   color: var(--black);
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -18,4 +17,14 @@
 
 .black {
   color: var(--black);
+}
+
+.large {
+  font-size: 6rem;
+  line-height: 0;
+}
+
+.largeIcon {
+  height: 5rem;
+  width: 5rem;
 }

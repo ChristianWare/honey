@@ -1,4 +1,5 @@
 import ContactSection from "@/components/ContactSection/ContactSection";
+import Footer from "@/components/Footer/Footer";
 import GridSection from "@/components/GridSection/GridSection";
 import Hero from "@/components/Hero/Hero";
 import PostHero from "@/components/PostHero/PostHero";
@@ -18,6 +19,7 @@ export default function Home() {
       <Quotes />
       <ProductPreviewSection />
       <ContactSection />
+      <Footer />
     </main>
   );
 }
