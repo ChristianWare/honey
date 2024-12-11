@@ -25,21 +25,23 @@
   font-size: 3rem;
   color: var(--orange);
   user-select: none;
+  transition: all 0.7s ease;
 }
 
 .content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: all 0.7s ease;
   opacity: 0;
   padding-top: 1rem;
 }
 
 .content p {
-  color: var(--orange);
+  color: var(--teal);
 }
 
 .contentOpen {
   max-height: 500px; /* Set a max-height large enough to fit the content */
   opacity: 1;
+  transition: all 0.7s ease;
 }
