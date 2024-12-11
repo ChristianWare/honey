@@ -1,6 +1,7 @@
 import GridSection from "@/components/GridSection/GridSection";
 import Hero from "@/components/Hero/Hero";
 import PostHero from "@/components/PostHero/PostHero";
+import ScrollLogos from "@/components/ScrollLogos/ScrollLogos";
 import Unlock from "@/components/Unlock/Unlock";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <PostHero />
       <Unlock />
       <GridSection />
+      <ScrollLogos />
     </main>
   );
 }

@@ -1,0 +1,54 @@
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  background-color: var(--white);
+  padding: 3rem 0rem;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scroll 30s linear infinite;
+  gap: 2rem;
+}
+
+.spanContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider:hover .track {
+  animation-play-state: paused !important;
+}
