@@ -1,3 +1,4 @@
+import ContactSection from "@/components/ContactSection/ContactSection";
 import GridSection from "@/components/GridSection/GridSection";
 import Hero from "@/components/Hero/Hero";
 import PostHero from "@/components/PostHero/PostHero";
@@ -16,6 +17,7 @@ export default function Home() {
       <ScrollLogos />
       <Quotes />
       <ProductPreviewSection />
+      <ContactSection />
     </main>
   );
 }
