@@ -1,6 +1,6 @@
 .header {
   width: calc(100% - 100px);
-  z-index: 1000;
+  z-index: 10000;
   margin-bottom: -5rem;
   background-color: var(--yellow);
   /* border: 1px solid var(--black); */

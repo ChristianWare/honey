@@ -19,12 +19,12 @@
 }
 
 .headingii {
-  color: var(--white);
+  color: var(--tan);
   font-size: 4.5rem;
 }
 
 .copyii {
-  color: var(--white);
+  color: var(--tan);
 }
 
 .boxContainer {
@@ -53,18 +53,18 @@
   padding: 1rem;
   min-height: 270px;
   grid-area: one;
-  background-image: repeating-linear-gradient(
+  /* background-image: repeating-linear-gradient(
     45deg,
     #24645e 0,
     #24645e 1px,
     transparent 0,
     transparent 50%
   );
-  background-size: 10px 10px;
+  background-size: 10px 10px; */
+  background-color: #24645e;
 }
 
 .blend {
-  /* backdrop-filter: blur(15px); */
   padding: 2rem;
   border-radius: 10px;
   display: flex;
@@ -181,7 +181,7 @@
   height: 100%;
   font-size: 6rem;
   color: var(--tan);
-border-radius: 10px;
+  border-radius: 10px;
   background-color: var(--green);
   border: 1px solid #24645e;
   background-image: repeating-linear-gradient(

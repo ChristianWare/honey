@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   user-select: none;
-  z-index: 999;
+  /* z-index: 999; */
   background-color: var(--yellow);
   padding: 1rem 0rem;
 }
