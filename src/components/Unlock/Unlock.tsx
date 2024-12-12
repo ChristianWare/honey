@@ -31,7 +31,7 @@ const Unlock = () => {
             <h2 className={styles.heading}>Unlock the Sweetness of Nature</h2>
             <p className={styles.copy}>
               Discover a world of flavor with our three unique honey varieties.
-              Each jar offers a taste of nature's sweetness, from the bold,
+              Each jar offers a taste of nature&apos;s sweetness, from the bold,
               floral notes of Wildflower Honey to the delicate sweetness of
               Clover Honey and the bright citrusy flavor of Orange Blossom
               Honey.

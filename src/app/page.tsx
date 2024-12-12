@@ -2,6 +2,7 @@ import ContactSection from "@/components/ContactSection/ContactSection";
 import Footer from "@/components/Footer/Footer";
 import GridSection from "@/components/GridSection/GridSection";
 import Hero from "@/components/Hero/Hero";
+import NewFaq from "@/components/NewFaq/NewFaq";
 import PostHero from "@/components/PostHero/PostHero";
 import ProductPreviewSection from "@/components/ProductPreviewSection/ProductPreviewSection";
 import Quotes from "@/components/Quotes/Quotes";
@@ -18,6 +19,7 @@ export default function Home() {
       <ScrollLogos />
       <Quotes />
       <Unlock />
+      <NewFaq />
       <ContactSection />
       <Footer />
     </main>
