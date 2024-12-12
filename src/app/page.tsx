@@ -1,4 +1,5 @@
 import ContactSection from "@/components/ContactSection/ContactSection";
+import FeaturedProducts from "@/components/FeaturedProducts/FeaturedProducts";
 import Footer from "@/components/Footer/Footer";
 import GridSection from "@/components/GridSection/GridSection";
 import Hero from "@/components/Hero/Hero";
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Hero />
       <PostHero />
+      <FeaturedProducts />
       <ProductPreviewSection />
       <GridSection />
       <ScrollLogos />
