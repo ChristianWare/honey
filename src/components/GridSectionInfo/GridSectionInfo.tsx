@@ -3,23 +3,23 @@ import styles from "./GridSectionInfo.module.css";
 const data = [
   {
     id: 1,
-    title: "Proven partnerships and expertise",
-    copy: "We sell hundreds of thousands of coverages annually through partnerships with sports leagues and associations, mountain resorts and destination travel companies.",
+    title: "Our Journey from Hive to Home",
+    copy: "From our family-owned apiaries to your kitchen table, we bring you the purest honey, straight from the source.",
   },
   {
     id: 2,
-    title: "Benefits designed for outdoor active markets",
-    copy: "Maximize appeal and adoption with targeted coverage made to meet your customers’ needs when they’re interacting with your business.",
+    title: "A Family Tradition of Honey Making",
+    copy: "For generations, our family has been dedicated to crafting the finest honey, passed down through the years.",
   },
   {
     id: 3,
-    title: "Brand alignment and affinity",
-    copy: "Spot isn't just insurance; it's a lifestyle brand that seamlessly aligns with the essence of your business, enhancing the overall customer experience.",
+    title: "Committed to Quality, Committed to Bees",
+    copy: "We prioritize sustainable beekeeping practices to ensure the health of our bees and the quality of our honey.",
   },
   {
     id: 4,
-    title: "Ready-made marketing materials",
-    copy: "With co-branded landing pages, emails, FAQs and ads, we help educate your customers on the value of Spot products so it’s easy to understand and easy to purchase.",
+    title: "The Story Behind the Sweetness",
+    copy: "Discover the fascinating world of beekeeping and the journey of honey from the hive to your jar.",
   },
 ];
 

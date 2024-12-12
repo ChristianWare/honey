@@ -24,10 +24,8 @@ const Quotes = () => {
             </div>
             <div className={styles.right}>
               <h3 className={styles.quote}>
-                &quot;Spot’s policy offerings provide a single partner solution
-                and allow us to adjust to changing product needs. Spot’s
-                technical capabilities provide seamless data flows to allow for
-                efficient claim management and customer service.&quot;
+                &quot;This honey is absolutely divine! The rich, complex flavors
+                are simply amazing. I've never tasted anything like it&quot;
               </h3>
               <p className={styles.name}>Bob Stinchcomb</p>
               <p className={styles.title}>
@@ -49,8 +47,9 @@ const Quotes = () => {
             </div>
             <div className={styles.right}>
               <h3 className={styles.quote}>
-                &quot;Spot covered so many of the bills that my insurance
-                wouldn’t—it’s almost too good to be true.&quot;
+                &quot;I've been buying honey from this company for years and I'm
+                always impressed with the quality. It's the perfect addition to
+                my tea, yogurt, and baking.&quot;
               </h3>
               <p className={styles.name}>elle truax</p>
               <p className={styles.title}>

@@ -7,7 +7,9 @@ const ContactSection = () => {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <h2 className={styles.heading}>Ready to get Started?</h2>
+          <h2 className={styles.heading}>
+            Want to get in touch? <br /> Drop us a line
+          </h2>
           <div className={styles.contactForm}>
             <ContactForm />
           </div>

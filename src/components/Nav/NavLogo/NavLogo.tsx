@@ -14,7 +14,7 @@ const NavLogo = ({ color = "", size = "", iconSize = "" }: NavProps) => {
       href='/'
       className={`${styles.logo} ${styles[color]} ${styles[size]}`}
     >
-      Honey
+      Golden Drips
       <Bee className={`${styles.icon} ${styles[iconSize]}`} />
     </Link>
   );

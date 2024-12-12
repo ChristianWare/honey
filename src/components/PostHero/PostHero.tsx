@@ -7,14 +7,13 @@ const PostHero = () => {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            You want to improve your customer experience and the financial
-            resilience of your business without additional expense and hassle.
+            Do you want access to the best natural honey you can buy? Well
+            you've come to the right place.
           </div>
           <div className={styles.right}>
             <h2 className={styles.heading}>
-              Offer your customers more value at point-of-sale and beyond with
-              insurance products designed to fit seamlessly into your
-              operations.
+              We offer only the top notch honey, at the best value, along with
+              honey products made to fit seamlessly into your pantry.
             </h2>
           </div>
         </div>

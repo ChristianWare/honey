@@ -1,9 +1,9 @@
 import LayoutWrapper from "../LayoutWrapper";
 import styles from "./Unlock.module.css";
 import Image from "next/image";
-import Unlock1 from "../../../public/images/unlock1.jpg";
-import Unlock2 from "../../../public/images/unlock2.jpg";
-import Unlock3 from "../../../public/images/unlock3.jpg";
+import Unlock1 from "../../../public/images/product1.png";
+import Unlock2 from "../../../public/images/product2.png";
+import Unlock3 from "../../../public/images/product3.png";
 import Button from "../Button/Button";
 import ScrollHorizontalText from "../ScrollHorizontalText/ScrollHorizontalText";
 
@@ -28,17 +28,21 @@ const Unlock = () => {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <h2 className={styles.heading}>
-              Unlock new earnings and retain revenue.
-            </h2>
-            <h3 className={styles.title}>Injury Insurance</h3>
+            <h2 className={styles.heading}>Unlock the Sweetness of Nature</h2>
             <p className={styles.copy}>
-              Give your customers the confidence of covered medical expenses.
-              Works with passes, tickets or memberships where your customers may
-              be at increased risk of getting hurt.
+              Discover a world of flavor with our three unique honey varieties.
+              Each jar offers a taste of nature's sweetness, from the bold,
+              floral notes of Wildflower Honey to the delicate sweetness of
+              Clover Honey and the bright citrusy flavor of Orange Blossom
+              Honey.
             </p>
             <div className={styles.btnContainer}>
-              <Button href='/shop' text='Explore more' btnType='yellow' arrow />
+              <Button
+                href='/collections'
+                text='See All Categories'
+                btnType='yellow'
+                arrow
+              />
             </div>
           </div>
           <div className={styles.right}>
@@ -56,9 +60,7 @@ const Unlock = () => {
           </div>
         </div>
       </LayoutWrapper>
-      <ScrollHorizontalText
-        text='INSURANCE DESIGNED FOR LIFE IN MOTION'
-      />
+      <ScrollHorizontalText text='Unlocking the Power of Honey One Jar at a Time' />
     </section>
   );
 };

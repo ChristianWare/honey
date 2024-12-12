@@ -13,11 +13,11 @@ export default function Home() {
     <main>
       <Hero />
       <PostHero />
-      <Unlock />
+      <ProductPreviewSection />
       <GridSection />
       <ScrollLogos />
       <Quotes />
-      <ProductPreviewSection />
+      <Unlock />
       <ContactSection />
       <Footer />
     </main>
