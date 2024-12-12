@@ -21,11 +21,11 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  transition: all 0.3s ease-in;
   overflow: hidden;
-  border: 1px solid transparent;
-  transition: color 0.3s ease-in, border-color 0.3s ease-in;
+  border: 1px solid var(--yellow);
+  transition: color 0.2s ease-in, border-color 0.2s ease-in;
 }
+
 .btn::before {
   content: "";
   position: absolute;
@@ -35,7 +35,7 @@
   height: 100%;
   background-color: var(--black);
   z-index: -1;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in;
   transform: translateX(0);
 }
 
@@ -48,9 +48,48 @@
   border-color: var(--yellow);
 }
 
+.btn .arrow {
+  transform: rotate(180deg);
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: transform 0.2s ease-in;
+}
+
+.btn:hover .arrow {
+  transform: rotate(135deg);
+}
+
 .yellow {
   background-color: var(--yellow);
-  border: 1px solid var(--black);
+  border: 1px solid var(--yellow);
+}
+.yellowOutline {
+  border: 1px solid var(--yellow);
+  background-color: transparent;
+  color: var(--yellow);
+  position: relative;
+  overflow: hidden;
+}
+
+.yellowOutline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--yellow);
+  z-index: -1;
+  transition: transform 0.2s ease-in;
+  transform: translateX(0);
+}
+
+.yellowOutline:hover::before {
+  transform: translateX(100%);
+}
+
+.yellowOutline:hover {
+  color: var(--black);
 }
 
 .teal {
@@ -62,4 +101,5 @@
   transform: rotate(180deg);
   width: 2.5rem;
   height: 2.5rem;
+  transition: transform 0.2s ease-in;
 }

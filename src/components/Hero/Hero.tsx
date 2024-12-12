@@ -7,7 +7,6 @@ import LayoutWrapper from "../LayoutWrapper";
 
 const Hero = () => {
   return (
-    // <div className={styles.parent}>
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.imgOverlay}></div>
@@ -17,6 +16,7 @@ const Hero = () => {
         <Image
           src={HeroImage}
           alt='hero'
+          title='hero'
           fill
           className={styles.img}
           priority
@@ -32,9 +32,9 @@ const Hero = () => {
             </p>
             <div className={styles.btnContainer}>
               <Button href='/shop' text='Shop Now' btnType='yellow' />
+              <Button href='/about' text='Our Story' btnType='yellowOutline' />
             </div>
           </div>
-          <div className={styles.right}></div>
         </div>
       </LayoutWrapper>
     </section>

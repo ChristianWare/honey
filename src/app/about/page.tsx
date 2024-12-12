@@ -1,7 +1,14 @@
+import PageIntro from "@/components/PageIntro/PageIntro";
+import AboutImg from "../../../public/images/aboutiii.jpg";
+
 export default function AboutPage() {
   return (
-    <div>
-      <h1>AboutPage AboutPage</h1>
-    </div>
+    <main>
+      <PageIntro
+        text='About Us'
+        src={AboutImg}
+        copy='Like wine, our honey  takes on the flavor of where it’s from. We source a wide variety of premium, raw & unfiltered honey from beekeepers we know and trust.'
+      />
+    </main>
   );
 }

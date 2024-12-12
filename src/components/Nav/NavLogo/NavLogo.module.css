@@ -8,6 +8,7 @@
   letter-spacing: -1px;
   z-index: 1001;
   white-space: nowrap;
+  user-select: none;
 }
 
 .icon {
