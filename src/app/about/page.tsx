@@ -2,6 +2,7 @@ import PageIntro from "@/components/PageIntro/PageIntro";
 import AboutImg from "../../../public/images/aboutiii.jpg";
 import PostAboutHero from "./aboutComponents/PostAboutHero/PostAboutHero";
 import MissionValues from "./aboutComponents/MissionValues/MissionValues";
+import Spotlight from "./aboutComponents/Spotlight/Spotlight";
 
 export default function AboutPage() {
   return (
@@ -13,6 +14,7 @@ export default function AboutPage() {
       />
       <PostAboutHero />
       <MissionValues />
+      <Spotlight />
     </main>
   );
 }
