@@ -1,8 +1,8 @@
 .container {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 100%;
 }
 
@@ -66,17 +66,35 @@
   width: 60%;
 }
 
-.btnContainer {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 3rem;
-  width: 60%;
+.hoursBox {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.hours,
+.date,
+.time {
+  color: var(--white);
+}
+
+.hours {
+  font-size: 2.5rem;
+}
+
+.date,
+.time {
+  font-family: var(--RaptorMonoMedium);
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 968px) {
   .content,
-  .actualContent {
+  .actualContent,
+  .hoursBox {
     align-items: center;
     justify-content: center;
   }
@@ -110,10 +128,6 @@
 }
 
 @media screen and (max-width: 568px) {
-  /* .parent {
-    height: 50vh;
-  } */
-
   .content {
     padding: 12rem 0rem;
   }
@@ -126,11 +140,5 @@
   .heading,
   .copy {
     text-align: left;
-  }
-
-  .btnContainer {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    width: 100%;
   }
 }
