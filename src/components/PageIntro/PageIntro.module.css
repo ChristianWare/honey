@@ -1,8 +1,8 @@
 .container {
   position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  /* display: flex; */
+  /* justify-content: flex-start;
+  align-items: flex-start; */
   height: 100%;
 }
 
@@ -18,9 +18,9 @@
 }
 
 .img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  /* position: absolute; */
+  /* width: 100%;
+  height: 100%; */
   object-fit: cover;
 }
 
@@ -32,15 +32,6 @@
   justify-content: center;
 }
 
-.content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  z-index: 5;
-  width: 100%;
-  padding: 15rem 0rem;
-}
-
 .actualContent {
   display: flex;
   flex-direction: column;
@@ -49,10 +40,16 @@
   gap: 2rem;
   border-radius: 15px;
   padding: 2rem;
-  will-change: transform, opacity;
-  z-index: 999;
+  z-index: 99999999;
   flex: 4;
   width: 100%;
+  max-width: 100%;
+  padding: 15rem 0rem;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: flex-start;
+  justify-self: flex-start;
+  position: relative;
 }
 
 .heading {
@@ -63,7 +60,7 @@
   color: var(--white);
   font-size: 2rem;
   font-family: var(--RaptorMonoMedium);
-  width: 60%;
+  width: 50%;
 }
 
 .hoursBox {
@@ -89,6 +86,64 @@
 .time {
   font-family: var(--RaptorMonoMedium);
   font-size: 2rem;
+}
+
+.dataBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.iconContainer {
+  margin-bottom: 4rem;
+}
+
+.detailsArrowBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.icon,
+.arrow {
+  width: 3rem;
+  height: 3rem;
+}
+
+.da2 {
+  background-color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0.7rem;
+}
+
+.arrow {
+  transform: rotate(180deg);
+}
+
+.title,
+.dataCopy {
+  color: var(--black);
+  font-family: var(--RaptorMonoMedium);
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.title {
+  font-size: 2rem;
+  font-family: var(--RaptorTextSemiBold);
 }
 
 @media screen and (max-width: 968px) {
@@ -127,12 +182,25 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .dataBox {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+
+  .title,
+  .dataCopy {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 568px) {
   .content {
     padding: 12rem 0rem;
   }
 
-  .actualContent {
+  .actualContent,
+  .hoursBox {
     align-items: flex-start;
     justify-content: flex-start;
   }
