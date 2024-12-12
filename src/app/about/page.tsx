@@ -3,6 +3,11 @@ import AboutImg from "../../../public/images/aboutiii.jpg";
 import PostAboutHero from "./aboutComponents/PostAboutHero/PostAboutHero";
 import MissionValues from "./aboutComponents/MissionValues/MissionValues";
 import Spotlight from "./aboutComponents/Spotlight/Spotlight";
+import Select from "./aboutComponents/Select/Select";
+import Quotes from "@/components/Quotes/Quotes";
+import Unlock from "@/components/Unlock/Unlock";
+import ContactSection from "@/components/ContactSection/ContactSection";
+import Footer from "@/components/Footer/Footer";
 
 export default function AboutPage() {
   return (
@@ -15,6 +20,11 @@ export default function AboutPage() {
       <PostAboutHero />
       <MissionValues />
       <Spotlight />
+      <Select />
+      <Quotes />
+      <Unlock />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }
