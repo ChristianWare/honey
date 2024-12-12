@@ -7,14 +7,28 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
 }
 
 .heading {
   color: var(--white);
   text-align: center;
   width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.copy {
+  font-size: 2rem;
+  color: var(--yellow);
+  width: 70%;
+  line-height: 150%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 1068px) {
@@ -23,6 +37,12 @@
   }
 
   .heading {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .copy {
     width: 100%;
   }
 }
