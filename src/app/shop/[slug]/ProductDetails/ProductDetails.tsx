@@ -6,9 +6,10 @@ import { useState } from "react";
 import { checkInStock, findVariant } from "@/lib/utils";
 import ProductMedia from "../ProductMedia/ProductMedia";
 import ProductPrice from "../ProductPrice/ProductPrice";
-import ProductOptions from "../ProductOptions/ProductOptions";
-import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
+// import ProductOptions from "../ProductOptions/ProductOptions";
+// import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
 import CollapsibleSection from "@/components/CollapsibleSection/CollapsibleSection";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 interface ProductDetailsProps {
   product: products.Product;
@@ -66,115 +67,117 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-        <ProductMedia media={selectedMedia} />
-      </div>
-      <div className={styles.right}>
-        <span className={styles.breadcrumbs}>Shop • {product.ribbon}</span>
-        <h1 className={styles.heading}>{product.name}</h1>
-        <ProductPrice product={product} selectedVariant={selectedVariant} />
+    <LayoutWrapper>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <ProductMedia media={selectedMedia} />
+        </div>
+        <div className={styles.right}>
+          <span className={styles.breadcrumbs}>Shop • {product.ribbon}</span>
+          <h1 className={styles.heading}>{product.name}</h1>
+          <ProductPrice product={product} selectedVariant={selectedVariant} />
 
-        {product.description && (
-          <div
-            dangerouslySetInnerHTML={{ __html: product.description }}
-            className={styles.description}
-          />
-        )}
-
-        {!!product.additionalInfoSections?.length && (
-          <>
-            <p
-              className={styles.readMore}
-              onClick={() => setShowMore(!showMore)}
-            >
-              {showMore ? "- Show Less" : "+ Read More"}
-            </p>
+          {product.description && (
             <div
-              className={`${styles.infoContainer} ${
-                showMore ? styles.show : ""
-              }`}
-            >
-              {product.additionalInfoSections.map((section) => (
-                <div key={section.title}>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: section.description || "",
-                    }}
-                    className={styles.description}
-                  />
-                </div>
-              ))}
-            </div>
-          </>
-        )}
+              dangerouslySetInnerHTML={{ __html: product.description }}
+              className={styles.description}
+            />
+          )}
 
-        <ProductOptions
+          {!!product.additionalInfoSections?.length && (
+            <>
+              <p
+                className={styles.readMore}
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? "- Show Less" : "+ Read More"}
+              </p>
+              <div
+                className={`${styles.infoContainer} ${
+                  showMore ? styles.show : ""
+                }`}
+              >
+                {product.additionalInfoSections.map((section) => (
+                  <div key={section.title}>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: section.description || "",
+                      }}
+                      className={styles.description}
+                    />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* <ProductOptions
           product={product}
           selectedOptions={selectedOptions}
           setSelectedOptions={setSelectedOptions}
-        />
+        /> */}
 
-        {inStock ? (
-          <>
-            {!!availableQuantity &&
-              (availableQuantityExceeded || availableQuantity < 10) && (
-                <span className={styles.stockWarning}>
-                  Only {availableQuantity} left in stock
-                </span>
-              )}
-            <div className={styles.quantityInfoBox}>
-              <div className={styles.quantityInfo}>
-                <div className={styles.quantitySelector}>
-                  <button
-                    onClick={decreaseQuantity}
-                    className={styles.quantityButton}
-                  >
-                    -
-                  </button>
-                  <span className={styles.quantityDisplay}>{quantity}</span>
-                  <button
-                    onClick={increaseQuantity}
-                    className={styles.quantityButton}
-                  >
-                    +
-                  </button>
-                </div>
-                {/* {!!availableQuantity &&
+          {inStock ? (
+            <>
+              {!!availableQuantity &&
+                (availableQuantityExceeded || availableQuantity < 10) && (
+                  <span className={styles.stockWarning}>
+                    Only {availableQuantity} left in stock
+                  </span>
+                )}
+              <div className={styles.quantityInfoBox}>
+                <div className={styles.quantityInfo}>
+                  <div className={styles.quantitySelector}>
+                    <button
+                      onClick={decreaseQuantity}
+                      className={styles.quantityButton}
+                    >
+                      -
+                    </button>
+                    <span className={styles.quantityDisplay}>{quantity}</span>
+                    <button
+                      onClick={increaseQuantity}
+                      className={styles.quantityButton}
+                    >
+                      +
+                    </button>
+                  </div>
+                  {/* {!!availableQuantity &&
                 (availableQuantityExceeded || availableQuantity < 10) && (
                   <span className={styles.stockWarning}>
                   Only {availableQuantity} left in stock
                   </span>
                   )} */}
-              </div>
-              <div className={styles.btnContainer}>
-                <AddToCartButton
+                </div>
+                <div className={styles.btnContainer}>
+                  {/* <AddToCartButton
                   product={product}
                   selectedOptions={selectedOptions}
                   quantity={quantity}
-                />
+                /> */}
+                </div>
               </div>
-            </div>
-          </>
-        ) : (
-          <button className={styles.outOfStockButton}>Out of stock</button>
-        )}
+            </>
+          ) : (
+            <button className={styles.outOfStockButton}>Out of stock</button>
+          )}
 
-        <div className={styles.collapsibleSection}>
-          <CollapsibleSection
-            title='Warranty'
-            content='Your investment in CHUXLY headphones is backed by our unwavering commitment to quality. Every purchase comes with a 90-day warranty, ensuring your audio journey is supported with peace of mind.'
-          />
-          <CollapsibleSection
-            title='Shipping & delivery'
-            content='Our global shipping network ensures that no matter where you are, your headphones will arrive at your doorstep with swift efficiency. All orders ship next business day.'
-          />
-          <CollapsibleSection
-            title='Support'
-            content='Download the CHUXLY app now – available on Google Play and the Apple Store. For technical support, please visit our Support page.'
-          />
+          <div className={styles.collapsibleSection}>
+            <CollapsibleSection
+              title='Warranty'
+              content='Your investment in CHUXLY headphones is backed by our unwavering commitment to quality. Every purchase comes with a 90-day warranty, ensuring your audio journey is supported with peace of mind.'
+            />
+            <CollapsibleSection
+              title='Shipping & delivery'
+              content='Our global shipping network ensures that no matter where you are, your headphones will arrive at your doorstep with swift efficiency. All orders ship next business day.'
+            />
+            <CollapsibleSection
+              title='Support'
+              content='Download the CHUXLY app now – available on Google Play and the Apple Store. For technical support, please visit our Support page.'
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </LayoutWrapper>
   );
 }

@@ -11,7 +11,6 @@ export default async function Layout({
 }) {
   return (
     <div className={styles.container}>
-      <div className={styles.navContainer}></div>
       {children}
       <NewFaq />
       <ContactSection />

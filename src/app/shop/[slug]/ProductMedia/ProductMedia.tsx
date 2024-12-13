@@ -4,7 +4,7 @@ import WixImage from "@/components/WixImage";
 import { products } from "@wix/stores";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import Arrow from "../../../../../public/icons/leftArrow.svg";
+// import Arrow from "../../../../../public/icons/leftArrow.svg";
 
 interface ProductMediaProps {
   media: products.MediaItem[] | undefined;
@@ -73,7 +73,7 @@ export default function ProductMedia({ media }: ProductMediaProps) {
         ) : null}
 
         {/* Overlay circles representing remaining images */}
-        <div className={styles.circleContainer}>
+        {/* <div className={styles.circleContainer}>
           {media.map((_, index) => (
             <span
               key={index}
@@ -84,10 +84,10 @@ export default function ProductMedia({ media }: ProductMediaProps) {
               }`}
             />
           ))}
-        </div>
+        </div> */}
 
         {/* Left and Right Navigation Arrows */}
-        <button
+        {/* <button
           className={`${styles.arrowButton} ${styles.leftArrow}`}
           onClick={handlePrevious}
         >
@@ -98,7 +98,7 @@ export default function ProductMedia({ media }: ProductMediaProps) {
           onClick={handleNext}
         >
           <Arrow className={`${styles.arrow} ${styles.arrowReverse}`} />
-        </button>
+        </button> */}
       </div>
     </div>
   );

@@ -1,18 +1,20 @@
+import styles from "./SlupPage.module.css";
 import { getProductBySlug } from "@/wix-api/products";
 import { notFound } from "next/navigation";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import { Metadata } from "next";
 import { getWixServerClient } from "@/lib/wix-client.server";
-import Features from "@/components/Features/Features";
+// import Features from "@/components/Features/Features";
 import LayoutWrapper from "@/components/LayoutWrapper";
-import VideoUsp from "@/components/VideoUsp/VideoUsp";
-import Featuresii from "@/components/Featuresii/Featuresii";
+// import VideoUsp from "@/components/VideoUsp/VideoUsp";
+// import Featuresii from "@/components/Featuresii/Featuresii";
 import TextImageFlip from "@/components/TextImageFlip/TextImageFlip";
-import FlipOne from "../../../../public/images/flipOne.jpg";
-import FlipTwo from "../../../../public/images/flipTwo.jpg";
-import Witb from "@/components/Witb/Witb";
+import FlipOne from "../../../../public/images/honey.png";
+import FlipTwo from "../../../../public/images/hero.jpg";
+// import Witb from "@/components/Witb/Witb";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
-import FinalCTA from "@/components/FinalCTA/FinalCTA";
+import Nav from "@/components/Nav/Nav";
+// import FinalCTA from "@/components/FinalCTA/FinalCTA";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -56,18 +58,20 @@ export default async function Page({ params }: PageProps) {
 
   if (!product?._id) notFound();
 
-  const media = product.media?.items; // Extract media items from the product
+  // const media = product.media?.items;
 
   return (
     <main>
-      <LayoutWrapper>
-        <div style={{ marginTop: "5rem" }}>
+      <Nav />
+      {/* <LayoutWrapper> */}
+        {/* <div style={{ marginTop: "7rem" }}> */}
+        <div className={styles.topContainer}>
           <ProductDetails product={product} />
         </div>
-      </LayoutWrapper>
-      <Features />
-      <VideoUsp />
-      <Featuresii />
+      {/* </LayoutWrapper> */}
+      {/* <Features /> */}
+      {/* <VideoUsp /> */}
+      {/* <Featuresii /> */}
       <TextImageFlip
         src={FlipOne}
         title='Feel the music, embrace the silence'
@@ -79,9 +83,9 @@ export default async function Page({ params }: PageProps) {
         text="Our CHUXLY Bluetooth connection gives you the freedom to explore your auditory universe without any constraints. Whether you're tuning into a playlist or diving into a podcast, your listening experience is transformed into a realm of boundless sound, redefining wireless possibilities with every note."
         flip='flip'
       />
-      <Witb media={media} itemName={product.name || undefined} />
+      {/* <Witb media={media} itemName={product.name || undefined} /> */}
       <RelatedProducts productId={product._id} />
-      <FinalCTA />
+      {/* <FinalCTA /> */}
     </main>
   );
 }
