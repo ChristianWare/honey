@@ -5,6 +5,7 @@
   justify-content: flex-start;
   gap: 2rem;
   background-color: var(--yellow);
+  border: 1px solid var(--olive);
   border-radius: 15px;
   padding: 2rem;
   height: 100%;
