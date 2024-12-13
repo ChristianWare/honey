@@ -140,7 +140,7 @@
   font-family: var(--RaptorTextSemiBold);
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1068px) {
   .content,
   .actualContent,
   .hoursBox {

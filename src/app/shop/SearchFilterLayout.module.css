@@ -1,0 +1,212 @@
+.searchContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5rem;
+  padding: 0rem;
+  margin-top: 10rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-gap: 4rem;
+  margin-top: 4rem;
+}
+
+.aside {
+  /* position: sticky; */
+  top: 2.5rem;
+  /* margin-top: 6rem; */
+  display: none;
+}
+
+ .asideVisible {
+    display: block;
+  }
+
+  .aside {
+    width: 100%;
+  }
+
+
+.shopTitle {
+  font-family: var(--pretendard);
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+.collectionsList {
+  list-style: none;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.collectionNameBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid lightgray;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Hide the native checkbox */
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: gray;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.checkbox:checked + .customCheckbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.collectionName {
+  font-size: 1.8rem;
+  font-family: var(--pretendard);
+}
+
+.priceRangeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.priceRangeTitle,
+.sortTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.priceRange {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 1rem;
+}
+
+.priceInput {
+  border: 1px solid darkgray;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.goBtn,
+.clearBtn {
+  background-color: darkgray;
+  width: 100%;
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.goBtn {
+  margin-top: 1rem;
+}
+
+.clearBtn {
+  background-color: var(--black);
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.selectOption {
+  border: 1px solid darkgray;
+  background-color: rgb(236, 233, 233);
+  padding: 1rem;
+  border-radius: 6px;
+  color: var(--black);
+  position: relative;
+  width: 100%;
+}
+
+.filterButton {
+  /* display: none; */
+  border: 1px solid var(--black);
+  color: var(--black);
+  padding: 1rem 5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+@media screen and (max-width: 1068px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .aside {
+    align-items: center;
+    position: static;
+    display: none;
+    margin-top: 0rem;
+  }
+
+  .filterButton {
+    display: inline-block;
+  }
+
+  .asideVisible {
+    display: block;
+  }
+
+  .aside {
+    width: 100%;
+  }
+
+  .priceRange {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .goBtn {
+    margin-top: 0;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .priceRange {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
