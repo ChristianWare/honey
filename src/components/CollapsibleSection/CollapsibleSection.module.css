@@ -1,5 +1,5 @@
 .section {
-  border-bottom: 1px solid var(--orange);
+  border-bottom: 1px solid var(--olive);
   padding: 1.5rem 0;
   width: 100%;
 }
@@ -23,7 +23,7 @@
   cursor: pointer;
   font-weight: bold;
   font-size: 3rem;
-  color: var(--orange);
+  color: var(--olive);
   user-select: none;
   transition: all 0.7s ease;
 }

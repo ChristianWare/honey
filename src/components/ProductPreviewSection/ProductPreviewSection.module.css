@@ -77,7 +77,8 @@
 }
 
 .bottomRight {
-  background-color: var(--lightOlive);
+  background-color: var(--yellow);
+  border: 1px solid var(--olive);
   padding: 2rem;
   border-radius: 10px;
 }
@@ -85,7 +86,7 @@
 .price {
   margin-top: 2rem;
   font-size: 2rem;
-  color: var(--orange);
+  color: var(--teal);
 }
 
 .details {
@@ -95,6 +96,11 @@
 .collapsibleSection {
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.btnContainerii {
+  display: grid;
+  width: 100%;
 }
 
 @media screen and (max-width: 1068px) {

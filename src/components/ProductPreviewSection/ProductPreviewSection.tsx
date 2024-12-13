@@ -88,7 +88,7 @@ const ProductPreviewSection = () => {
                 />
               </div>
               <div className={styles.btnContainerii}>
-                <Button href='/shop' text='Shop Studio Elite' btnType='teal' />
+                <Button href='/shop' text='More Details' btnType='teal' />
               </div>{" "}
             </div>
           </div>
