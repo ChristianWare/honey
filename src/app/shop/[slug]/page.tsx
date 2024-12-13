@@ -5,7 +5,7 @@ import ProductDetails from "./ProductDetails/ProductDetails";
 import { Metadata } from "next";
 import { getWixServerClient } from "@/lib/wix-client.server";
 // import Features from "@/components/Features/Features";
-import LayoutWrapper from "@/components/LayoutWrapper";
+// import LayoutWrapper from "@/components/LayoutWrapper";
 // import VideoUsp from "@/components/VideoUsp/VideoUsp";
 // import Featuresii from "@/components/Featuresii/Featuresii";
 import TextImageFlip from "@/components/TextImageFlip/TextImageFlip";

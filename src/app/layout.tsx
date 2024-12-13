@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ReactQueryProvider from "@/ReactQueryProvider";
+import { Toaster } from "react-hot-toast";
 
 const RaptorMonoSemiBold = localFont({
   src: "../../public/fonts/RaptorMonoSemiBold.woff",
@@ -41,7 +43,23 @@ export default function RootLayout({
       <body
         className={`${RaptorMonoSemiBold.variable} ${RaptorTextSemiBold.variable} ${RaptorMonoMedium.variable} ${RaptorMonoRegular.variable}`}
       >
-        {children}
+        <ReactQueryProvider>
+          <Toaster
+            position='top-center'
+            toastOptions={{
+              className: "toastFont",
+              duration: 6000,
+              style: {
+                border: "2px solid #295f4e",
+                borderRadius: "50px",
+                textAlign: "center",
+                whiteSpace: "nowrap",
+              },
+            }}
+          />
+          {children}
+          {/* <Footer /> */}
+        </ReactQueryProvider>{" "}
         <script
           dangerouslySetInnerHTML={{
             __html: `

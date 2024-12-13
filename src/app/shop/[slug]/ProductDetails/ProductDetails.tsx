@@ -6,8 +6,8 @@ import { useState } from "react";
 import { checkInStock, findVariant } from "@/lib/utils";
 import ProductMedia from "../ProductMedia/ProductMedia";
 import ProductPrice from "../ProductPrice/ProductPrice";
-// import ProductOptions from "../ProductOptions/ProductOptions";
-// import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
+import ProductOptions from "../ProductOptions/ProductOptions";
+import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
 import CollapsibleSection from "@/components/CollapsibleSection/CollapsibleSection";
 import LayoutWrapper from "@/components/LayoutWrapper";
 
@@ -111,11 +111,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             </>
           )}
 
-          {/* <ProductOptions
+          <ProductOptions
           product={product}
           selectedOptions={selectedOptions}
           setSelectedOptions={setSelectedOptions}
-        /> */}
+        />
 
           {inStock ? (
             <>
@@ -150,11 +150,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                   )} */}
                 </div>
                 <div className={styles.btnContainer}>
-                  {/* <AddToCartButton
+                  <AddToCartButton
                   product={product}
                   selectedOptions={selectedOptions}
                   quantity={quantity}
-                /> */}
+                />
                 </div>
               </div>
             </>
