@@ -11,7 +11,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  border: 2px solid var(--olive2);
+  border: 2px solid var(--yellow);
   border-radius: 10px;
   padding: 3rem;
   background-color: var(--olive);
@@ -19,7 +19,7 @@
 
 .title,
 .copy {
-  color: var(--tan);
+  color: var(--yellow);
 }
 
 .title {

@@ -45,6 +45,10 @@
   transition: all 0.2s ease-in;
 }
 
+.qaContainer:hover {
+  background-color: var(--yellow);
+}
+
 .active {
   background-color: var(--yellow);
 }

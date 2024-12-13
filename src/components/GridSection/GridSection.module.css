@@ -53,14 +53,6 @@
   padding: 1rem;
   min-height: 270px;
   grid-area: one;
-  /* background-image: repeating-linear-gradient(
-    45deg,
-    #24645e 0,
-    #24645e 1px,
-    transparent 0,
-    transparent 50%
-  );
-  background-size: 10px 10px; */
   background-color: #24645e;
 }
 
