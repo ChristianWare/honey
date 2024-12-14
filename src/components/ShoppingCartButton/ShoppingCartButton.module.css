@@ -5,19 +5,27 @@
 .icon {
   width: 25px;
   height: 25px;
-  color: var(--white);
+  color: var(--black);
   cursor: pointer;
 }
 
+.equals {
+  font-size: 2rem;
+}
+
 .cartParent {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .counter {
-  position: absolute;
+  /* position: absolute;
   top: -25px;
-  left: 20px;
-  background-color: var(--umber);
+  left: 20px; */
+  background-color: var(--olive);
+  border: 2px solid var(--yellow);
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -51,7 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 2rem;
   border-bottom-color: 1px solid gray;
 }
 
@@ -62,7 +70,8 @@
 }
 
 .quantity {
-  background-color: var(--umber);
+  background-color: var(--yellow);
+  border: 1px solid var(--black);
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -71,7 +80,7 @@
   align-items: center;
   padding: 1px;
   cursor: pointer;
-  color: var(--white);
+  color: var(--black);
 }
 
 .cartList {

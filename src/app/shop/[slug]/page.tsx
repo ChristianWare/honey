@@ -4,17 +4,11 @@ import { notFound } from "next/navigation";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import { Metadata } from "next";
 import { getWixServerClient } from "@/lib/wix-client.server";
-// import Features from "@/components/Features/Features";
-// import LayoutWrapper from "@/components/LayoutWrapper";
-// import VideoUsp from "@/components/VideoUsp/VideoUsp";
-// import Featuresii from "@/components/Featuresii/Featuresii";
 import TextImageFlip from "@/components/TextImageFlip/TextImageFlip";
 import FlipOne from "../../../../public/images/honey.png";
 import FlipTwo from "../../../../public/images/hero.jpg";
-// import Witb from "@/components/Witb/Witb";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import Nav from "@/components/Nav/Nav";
-// import FinalCTA from "@/components/FinalCTA/FinalCTA";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -23,7 +17,7 @@ interface PageProps {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params; // Await params here
+  const { slug } = await params;
 
   const wixClient = await getWixServerClient();
   const product = await getProductBySlug(wixClient, slug);
@@ -51,7 +45,7 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: PageProps) {
-  const { slug } = await params; // Await params here
+  const { slug } = await params;
 
   const wixClient = await getWixServerClient();
   const product = await getProductBySlug(wixClient, slug);
@@ -63,15 +57,10 @@ export default async function Page({ params }: PageProps) {
   return (
     <main>
       <Nav />
-      {/* <LayoutWrapper> */}
-        {/* <div style={{ marginTop: "7rem" }}> */}
         <div className={styles.topContainer}>
           <ProductDetails product={product} />
         </div>
-      {/* </LayoutWrapper> */}
-      {/* <Features /> */}
-      {/* <VideoUsp /> */}
-      {/* <Featuresii /> */}
+     
       <TextImageFlip
         src={FlipOne}
         title='Feel the music, embrace the silence'
@@ -85,7 +74,6 @@ export default async function Page({ params }: PageProps) {
       />
       {/* <Witb media={media} itemName={product.name || undefined} /> */}
       <RelatedProducts productId={product._id} />
-      {/* <FinalCTA /> */}
     </main>
   );
 }

@@ -45,13 +45,13 @@ export default function RootLayout({
       >
         <ReactQueryProvider>
           <Toaster
-            position='top-center'
+            position='bottom-right'
             toastOptions={{
               className: "toastFont",
               duration: 6000,
               style: {
-                border: "2px solid #295f4e",
-                borderRadius: "50px",
+                border: "1px solid #333438",
+                borderRadius: "5px",
                 textAlign: "center",
                 whiteSpace: "nowrap",
               },

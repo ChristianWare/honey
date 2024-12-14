@@ -66,6 +66,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     }
   };
 
+
   return (
     <LayoutWrapper>
       <div className={styles.container}>
@@ -110,12 +111,13 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               </div>
             </>
           )}
-
-          <ProductOptions
-          product={product}
-          selectedOptions={selectedOptions}
-          setSelectedOptions={setSelectedOptions}
-        />
+          <div className={styles.productOptionsContainer}>
+            <ProductOptions
+              product={product}
+              selectedOptions={selectedOptions}
+              setSelectedOptions={setSelectedOptions}
+            />
+          </div>
 
           {inStock ? (
             <>
@@ -151,10 +153,10 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
                 <div className={styles.btnContainer}>
                   <AddToCartButton
-                  product={product}
-                  selectedOptions={selectedOptions}
-                  quantity={quantity}
-                />
+                    product={product}
+                    selectedOptions={selectedOptions}
+                    quantity={quantity}
+                  />
                 </div>
               </div>
             </>

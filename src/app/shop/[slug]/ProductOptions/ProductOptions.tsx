@@ -13,14 +13,21 @@ export default function ProductOptions({
   selectedOptions,
   setSelectedOptions,
 }: ProductOptionsProps) {
+  
   return (
     <div className={styles.container}>
       {product.productOptions?.map((option) => (
         <fieldset key={option.name} className={styles.fieldset}>
-          {/* <legend>{option.name}</legend> */}
+          <legend className={styles.optionName}>
+            {option.name} :{" "}
+            {option.name && selectedOptions[option.name]
+              ? selectedOptions[option.name]
+              : "None"}
+          </legend>
+
           <div className={styles.optionContainer}>
             {option.choices?.map((choice) => (
-              <div key={choice.description}>
+              <div key={choice.description} className={styles.choiceContainer}>
                 <input
                   type='radio'
                   id={choice.description}
@@ -47,11 +54,14 @@ export default function ProductOptions({
                   htmlFor={choice.description}
                   className={`${styles.radioLabel}`}
                 >
+                  {choice.description}
+                  {/* If the choice is a color option, display a swatch */}
                   {option.optionType === products.OptionType.color && (
                     <span
                       style={{
                         backgroundColor: choice.value,
                       }}
+                      className={styles.colorSwatch}
                     />
                   )}
                 </label>

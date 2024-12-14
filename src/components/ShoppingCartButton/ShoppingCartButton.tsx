@@ -50,7 +50,8 @@ export default function ShoppingCartButton({
       <div className='relative'>
         <button onClick={() => setSheetOpen(true)} className={styles.button}>
           <div className={styles.cartParent}>
-            <Cart className={`${styles.icon} ${styles[color]}`} />
+            <Cart className={`${styles.icon} ${styles[color]}`} />{" "}
+            <p className={styles.equals}>=</p>
             <span className={styles.counter}>
               {totalQuantity < 10 ? totalQuantity : "9+"}
             </span>
@@ -69,7 +70,7 @@ export default function ShoppingCartButton({
             <br />
             <br />
             <br />
-            <div className='flex grow flex-col space-y-5 overflow-y-auto'>
+            <div>
               <ul className={styles.cartList}>
                 {cartQuery.data?.lineItems?.map((item) => (
                   <ShoppingCartItem
@@ -84,9 +85,9 @@ export default function ShoppingCartButton({
                 <p className='text-destructive'>{cartQuery.error.message}</p>
               )}
               {!cartQuery.isPending && !cartQuery.data?.lineItems?.length && (
-                <div className='flex grow items-center justify-center text-center'>
-                  <div className='space-y-1.5'>
-                    <p className='text-lg font-semibold'>Your cart is empty</p>
+                <div>
+                  <div>
+                    <p>Your cart is empty</p>
                     <Link
                       href='/shop'
                       className='text-primary hover:underline'
@@ -126,10 +127,111 @@ export default function ShoppingCartButton({
   );
 }
 
+interface LineItemOptions {
+  name: string;
+  selectedValue: string;
+}
+
+interface LineItem extends currentCart.LineItem {
+  options?: LineItemOptions[];
+}
+
 interface ShoppingCartItemProps {
-  item: currentCart.LineItem;
+  item: LineItem; // Use the extended type
   onProductLinkClicked: () => void;
 }
+
+// function ShoppingCartItem({
+//   item,
+//   onProductLinkClicked,
+// }: ShoppingCartItemProps) {
+//   const updateQuantityMutation = useUpdateCartItemQuantity();
+//   const removeItemMutation = useRemoveCartItem();
+
+//   const productId = item._id;
+
+//   if (!productId) return null;
+
+//   const slug = item.url?.split("/").pop();
+
+//   const quantityLimitReached =
+//     !!item.quantity &&
+//     !!item.availability?.quantityAvailable &&
+//     item.quantity >= item.availability.quantityAvailable;
+
+//   return (
+//     <li className={styles.cartListItem}>
+//       <div className={styles.left}>
+//         <div className={styles.l1}>
+//           <Link href={`/shop/${slug}`} onClick={onProductLinkClicked}>
+//             <WixImage
+//               mediaIdentifier={item.image}
+//               width={100}
+//               height={100}
+//               alt={item.productName?.translated || "Product image"}
+//               className={styles.cartImage}
+//             />
+//           </Link>
+//         </div>
+//         <div className={styles.l2}>
+//           <Link href={`/products/${slug}`}>
+//             <p className={styles.productName}>
+//               {item.productName?.translated || "Item"}
+//             </p>
+//           </Link>
+//           {item.options?.map((option) => (
+//             <p key={option.name} className={styles.optionName}>
+//               {option.name}: {option.selectedValue || "None"}
+//             </p>
+//           ))}
+//           <div className={styles.qtyBtnBox}>
+//             <button
+//               disabled={item.quantity === 1}
+//               onClick={() =>
+//                 updateQuantityMutation.mutate({
+//                   productId,
+//                   newQuantity: !item.quantity ? 0 : item.quantity - 1,
+//                 })
+//               }
+//             >
+//               -
+//             </button>
+//             <span>{item.quantity}</span>
+//             <button
+//               disabled={quantityLimitReached}
+//               onClick={() =>
+//                 updateQuantityMutation.mutate({
+//                   productId,
+//                   newQuantity: !item.quantity ? 1 : item.quantity + 1,
+//                 })
+//               }
+//             >
+//               +
+//             </button>
+//           </div>
+//           {quantityLimitReached && (
+//             <span className={styles.quantityWarning}>
+//               Quantity limit reached
+//             </span>
+//           )}
+//         </div>
+//       </div>
+//       <div className={styles.right}>
+//         <p>
+//           {item.fullPrice && item.fullPrice.amount !== item.price?.amount && (
+//             <span className={styles.originalPrice}>
+//               {item.fullPrice.formattedConvertedAmount}
+//             </span>
+//           )}
+//           {item.price?.formattedConvertedAmount}
+//         </p>
+//         <button onClick={() => removeItemMutation.mutate(productId)}>
+//           <Trash className={styles.trashIcon} />
+//         </button>
+//       </div>
+//     </li>
+//   );
+// }
 
 function ShoppingCartItem({
   item,
@@ -149,6 +251,22 @@ function ShoppingCartItem({
     !!item.availability?.quantityAvailable &&
     item.quantity >= item.availability.quantityAvailable;
 
+  // Variant Map
+  const variantMap: Record<string, { name: string; value: string }> = {
+    "2c55e14a-6ad8-45e6-afd8-16721cf2edd7": { name: "Select", value: "Single" },
+    "e04d9d0b-4d2e-4c2e-bd16-56b46aa920d6": {
+      name: "Select",
+      value: "Set of 2",
+    },
+  };
+
+  // Safely access variantId
+  const variantId = item.catalogReference?.options?.variantId ?? "";
+  const variantDetails = variantMap[variantId] || {
+    name: "Unknown",
+    value: "Unknown",
+  };
+
   return (
     <li className={styles.cartListItem}>
       <div className={styles.left}>
@@ -164,11 +282,13 @@ function ShoppingCartItem({
           </Link>
         </div>
         <div className={styles.l2}>
-          <Link href={`/products/${slug}`}>
+          <Link href={`/shop/${slug}`}>
             <p className={styles.productName}>
               {item.productName?.translated || "Item"}
             </p>
           </Link>
+          {/* Display variant details */}
+          <p className={styles.optionValue}>{variantDetails.value}</p>
           <div className={styles.qtyBtnBox}>
             <button
               disabled={item.quantity === 1}
@@ -217,3 +337,4 @@ function ShoppingCartItem({
     </li>
   );
 }
+

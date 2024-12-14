@@ -42,6 +42,10 @@
   margin-bottom: 2rem;
 }
 
+.productOptionsContainer {
+  margin-top: 4rem;
+}
+
 .infoContainer.show {
   max-height: 500px; /* Set this to a value that can accommodate the content */
   opacity: 1;

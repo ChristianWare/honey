@@ -4,8 +4,8 @@
 }
 
 .price {
-  /* Normal price styling */
-  font-family: var(--pretendard);
+  font-size: 2.5rem;
+  font-family: var(--RaptorMonoMedium);
 }
 
 .strikethrough {

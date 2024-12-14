@@ -19,7 +19,6 @@ export default async function NavIcons({ color = "" }: NavProps) {
 
   return (
     <div className={`${styles.container} ${styles[color]}`}>
-      <div>Icons here</div>
       <UserButton loggedInMember={loggedInMember} color={color} />
       <ShoppingCartButton initialData={cart} color={color} />
     </div>

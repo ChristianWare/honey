@@ -1,10 +1,10 @@
 .modalBackdrop {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000; /* Increase if other elements overlap */
-  width: 100vw;
-  height: 100vh;
+  top: -50px;
+  left: -50px;
+  z-index: 10000; 
+  width: 110vw;
+  height: 105vh;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
@@ -22,6 +22,7 @@
   transition: all 0.3s ease-in;
   z-index: 10001; /* Ensure it's above the backdrop */
   overflow: auto;
+  margin-left: 2rem;
 }
 
 .button {

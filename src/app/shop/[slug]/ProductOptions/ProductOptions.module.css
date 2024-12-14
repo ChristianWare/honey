@@ -11,6 +11,10 @@
   margin-bottom: 2rem;
 }
 
+.optionName {
+  margin-bottom: 2rem;
+}
+
 .legend {
   font-size: 16px;
   font-weight: bold;
@@ -32,28 +36,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 2px solid transparent;
-  border-radius: 50%;
+  padding: 1rem 2rem;
+  border: 1px solid var(--black);
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .radioLabel span {
   display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid lightgrey;
+  padding: 1rem 2rem;
 }
 
 .radioLabel:hover {
-  border-color: #888;
+  background-color: var(--black);
+  color: var(--yellow);
 }
 
 .radioInput:checked + .radioLabel {
   border-color: black;
+  background-color: var(--black);
+  color: var(--yellow);
 }
 
 .radioInput:disabled + .radioLabel {
