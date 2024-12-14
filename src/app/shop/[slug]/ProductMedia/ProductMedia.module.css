@@ -1,106 +1,52 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  touch-action: pan-y; /* Prevents vertical scrolling during horizontal swipes */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
 }
 
 .imgContainer {
-  width: 100%;
-  height: 550px;
   position: relative;
+  width: 100%;
+  height: 500px;
 }
 
 .img {
-  object-fit: contain;
-  /* background-color: var(--yellow); */
-  /* border: 1px solid var(--olive); */
+  object-fit: cover;
   border-radius: 15px;
   width: 100%;
   height: 100%;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
 }
 
 .video {
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 15px;
   width: 100%;
   height: 100%;
 }
 
-.navigationContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+@media screen and (max-width: 1168px) {
+  .gridContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.arrowButton {
-  /* background: none; */
-  /* border: none; */
-  cursor: pointer;
-  padding: 0.5rem;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  /* border: 1px solid var(--burgundy); */
-  background-color: lightgray;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+@media screen and (max-width: 968px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.leftArrow {
-  left: 20px;
-}
+@media screen and (max-width: 668px) {
+  .gridContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-.rightArrow {
-  right: 20px;
-}
-
-.arrow {
-  width: 24px;
-  height: 24px;
-}
-
-.arrowReverse {
-  transform: rotate(180deg);
-}
-
-/* Circles to represent remaining images */
-.circleContainer {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-}
-
-.circle {
-  width: 10px;
-  height: 10px;
-  background-color: lightgray;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.activeCircle {
-  background-color: black;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-
-@media screen and (max-width: 568px) {
   .imgContainer {
     height: 400px;
   }

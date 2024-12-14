@@ -49,56 +49,37 @@ export default function ProductMedia({ media }: ProductMediaProps) {
     trackTouch: true,
   });
 
-  const selectedImage = selectedMedia?.image;
-  const selectedVideo = selectedMedia?.video?.files?.[0];
+  console.log(media);
 
   return (
-    <div {...swipeHandlers} className={styles.container}>
-      {/* Display the selected media (image or video) */}
-      <div className={styles.imgContainer}>
-        {selectedImage?.url ? (
-          <WixImage
-            mediaIdentifier={selectedImage.url}
-            alt={selectedImage.altText || "Product Image"}
-            scaleToFill={false}
-            className={styles.img}
-          />
-        ) : selectedVideo?.url ? (
-          <video autoPlay loop controls className={styles.video}>
-            <source
-              src={selectedVideo.url}
-              type={`video/${selectedVideo.format}`}
-            />
-          </video>
-        ) : null}
+    <div {...swipeHandlers} className={styles.mediaContainer}>
+      <div className={styles.gridContainer}>
+        {media.map((item) => {
+          const image = item.image;
+          const video = item.video?.files?.[0];
 
-        {/* Overlay circles representing remaining images */}
-        {/* <div className={styles.circleContainer}>
-          {media.map((_, index) => (
-            <span
-              key={index}
-              className={`${styles.circle} ${
-                media[index]._id === selectedMedia?._id
-                  ? styles.activeCircle
-                  : ""
-              }`}
-            />
-          ))}
-        </div> */}
-
-        {/* Left and Right Navigation Arrows */}
-        {/* <button
-          className={`${styles.arrowButton} ${styles.leftArrow}`}
-          onClick={handlePrevious}
-        >
-          <Arrow className={styles.arrow} />
-        </button>
-        <button
-          className={`${styles.arrowButton} ${styles.rightArrow}`}
-          onClick={handleNext}
-        >
-          <Arrow className={`${styles.arrow} ${styles.arrowReverse}`} />
-        </button> */}
+          return (
+            <div key={item._id} className={styles.gridItem}>
+              {image?.url ? (
+                <div className={styles.imgContainer}>
+                  <WixImage
+                    mediaIdentifier={image.url}
+                    alt={image.altText || "Product Image"}
+                    scaleToFill={false}
+                    className={styles.img}
+                  />
+                </div>
+              ) : video?.url ? (
+                <div className={styles.videoContainer}>
+                  <video autoPlay loop controls className={styles.video}>
+                    <source src={video.url} type={`video/${video.format}`} />
+                  </video>
+                </div>
+              ) : null}
+              
+            </div>
+          );
+        })}
       </div>
     </div>
   );
