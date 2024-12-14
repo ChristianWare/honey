@@ -1,5 +1,5 @@
 import styles from "./AddToCartButton.module.css";
-
+import { useModal } from "@/context/ModalContext";
 import { useAdditemToCart } from "@/hooks/cart";
 import { products } from "@wix/stores";
 
@@ -16,18 +16,20 @@ export default function AddToCartButton({
   ...props
 }: AddToCartButtonProps) {
   const mutation = useAdditemToCart();
+  const { setModalOpen } = useModal(); // Access modal state
 
   return (
     <button
-      onClick={() =>
+      onClick={() => {
         mutation.mutate({
           product,
           selectedOptions,
           quantity,
-        })
-      }
+        });
+        setModalOpen(true); // Open modal
+      }}
       {...props}
-      className={`${styles.btn} ${styles.pulseWrapper}`}
+      className={styles.btn}
     >
       <span className={styles.pulse}></span> Add To Cart
     </button>

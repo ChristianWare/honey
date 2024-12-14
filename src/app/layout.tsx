@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ReactQueryProvider from "@/ReactQueryProvider";
 import { Toaster } from "react-hot-toast";
+import { ModalProvider } from "@/context/ModalContext";
+
 
 const RaptorMonoSemiBold = localFont({
   src: "../../public/fonts/RaptorMonoSemiBold.woff",
@@ -57,7 +59,7 @@ export default function RootLayout({
               },
             }}
           />
-          {children}
+          <ModalProvider>{children}</ModalProvider>
           {/* <Footer /> */}
         </ReactQueryProvider>{" "}
         <script

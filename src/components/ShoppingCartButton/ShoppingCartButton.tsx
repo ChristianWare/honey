@@ -2,6 +2,8 @@
 "use client";
 
 import styles from "./ShoppingCartButton.module.css";
+import { useModal } from "@/context/ModalContext";
+
 import {
   useCart,
   useRemoveCartItem,
@@ -9,7 +11,6 @@ import {
 } from "@/hooks/cart";
 import { useCartCheckout } from "@/hooks/checkout";
 import { currentCart } from "@wix/ecom";
-import { useState } from "react";
 import Modal from "../Modal/Modal";
 import Link from "next/link";
 import WixImage from "../WixImage";
@@ -25,10 +26,9 @@ export default function ShoppingCartButton({
   initialData,
   color = "",
 }: ShoppingCartButtonProps) {
-  const [sheetOpen, setSheetOpen] = useState(false);
+  const { isModalOpen, setModalOpen } = useModal(); // Access modal state
 
   const cartQuery = useCart(initialData);
-  // const { startCheckoutFlow, pending } = useCartCheckout();
   const { startCheckoutFlow } = useCartCheckout();
 
   const totalQuantity =
@@ -48,7 +48,7 @@ export default function ShoppingCartButton({
   return (
     <>
       <div className='relative'>
-        <button onClick={() => setSheetOpen(true)} className={styles.button}>
+        <button onClick={() => setModalOpen(true)} className={styles.button}>
           <div className={styles.cartParent}>
             <Cart className={`${styles.icon} ${styles[color]}`} />{" "}
             <p className={styles.equals}>=</p>
@@ -57,7 +57,7 @@ export default function ShoppingCartButton({
             </span>
           </div>
         </button>
-        <Modal isOpen={sheetOpen} onClose={() => setSheetOpen(false)}>
+        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
           <div className={styles.modalContent}>
             <div className={styles.topContent}>
               <div className={styles.quantityContainer}>
@@ -76,7 +76,7 @@ export default function ShoppingCartButton({
                   <ShoppingCartItem
                     key={item._id}
                     item={item}
-                    onProductLinkClicked={() => setSheetOpen(false)}
+                    onProductLinkClicked={() => setModalOpen(false)}
                   />
                 ))}
               </ul>
@@ -91,7 +91,7 @@ export default function ShoppingCartButton({
                     <Link
                       href='/shop'
                       className='text-primary hover:underline'
-                      onClick={() => setSheetOpen(false)}
+                      onClick={() => setModalOpen(false)}
                     >
                       Start shopping now
                     </Link>
@@ -109,15 +109,21 @@ export default function ShoppingCartButton({
                   </p>
                 </div>
                 <p>*** Shipping and taxes calculated at checkout</p>
-                <button
-                  onClick={handleCheckout}
-                  disabled={true}
-                  // disabled={!totalQuantity || cartQuery.isFetching || pending}
-                  className={styles.checkoutBox}
-                >
-                  {/* {pending ? "Processing..." : "Checkout"} */}
-                  Checkout Not Available
-                </button>
+                <div className={styles.btnContainer}>
+                  <button
+                    onClick={handleCheckout}
+                    disabled={true}
+                    className={styles.checkoutBox}
+                  >
+                    Checkout Not Available
+                  </button>
+                  <button
+                    onClick={() => setModalOpen(false)}
+                    className={styles.checkoutBoxii}
+                  >
+                    Keep Shopping
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -141,98 +147,6 @@ interface ShoppingCartItemProps {
   onProductLinkClicked: () => void;
 }
 
-// function ShoppingCartItem({
-//   item,
-//   onProductLinkClicked,
-// }: ShoppingCartItemProps) {
-//   const updateQuantityMutation = useUpdateCartItemQuantity();
-//   const removeItemMutation = useRemoveCartItem();
-
-//   const productId = item._id;
-
-//   if (!productId) return null;
-
-//   const slug = item.url?.split("/").pop();
-
-//   const quantityLimitReached =
-//     !!item.quantity &&
-//     !!item.availability?.quantityAvailable &&
-//     item.quantity >= item.availability.quantityAvailable;
-
-//   return (
-//     <li className={styles.cartListItem}>
-//       <div className={styles.left}>
-//         <div className={styles.l1}>
-//           <Link href={`/shop/${slug}`} onClick={onProductLinkClicked}>
-//             <WixImage
-//               mediaIdentifier={item.image}
-//               width={100}
-//               height={100}
-//               alt={item.productName?.translated || "Product image"}
-//               className={styles.cartImage}
-//             />
-//           </Link>
-//         </div>
-//         <div className={styles.l2}>
-//           <Link href={`/products/${slug}`}>
-//             <p className={styles.productName}>
-//               {item.productName?.translated || "Item"}
-//             </p>
-//           </Link>
-//           {item.options?.map((option) => (
-//             <p key={option.name} className={styles.optionName}>
-//               {option.name}: {option.selectedValue || "None"}
-//             </p>
-//           ))}
-//           <div className={styles.qtyBtnBox}>
-//             <button
-//               disabled={item.quantity === 1}
-//               onClick={() =>
-//                 updateQuantityMutation.mutate({
-//                   productId,
-//                   newQuantity: !item.quantity ? 0 : item.quantity - 1,
-//                 })
-//               }
-//             >
-//               -
-//             </button>
-//             <span>{item.quantity}</span>
-//             <button
-//               disabled={quantityLimitReached}
-//               onClick={() =>
-//                 updateQuantityMutation.mutate({
-//                   productId,
-//                   newQuantity: !item.quantity ? 1 : item.quantity + 1,
-//                 })
-//               }
-//             >
-//               +
-//             </button>
-//           </div>
-//           {quantityLimitReached && (
-//             <span className={styles.quantityWarning}>
-//               Quantity limit reached
-//             </span>
-//           )}
-//         </div>
-//       </div>
-//       <div className={styles.right}>
-//         <p>
-//           {item.fullPrice && item.fullPrice.amount !== item.price?.amount && (
-//             <span className={styles.originalPrice}>
-//               {item.fullPrice.formattedConvertedAmount}
-//             </span>
-//           )}
-//           {item.price?.formattedConvertedAmount}
-//         </p>
-//         <button onClick={() => removeItemMutation.mutate(productId)}>
-//           <Trash className={styles.trashIcon} />
-//         </button>
-//       </div>
-//     </li>
-//   );
-// }
-
 function ShoppingCartItem({
   item,
   onProductLinkClicked,
@@ -252,20 +166,20 @@ function ShoppingCartItem({
     item.quantity >= item.availability.quantityAvailable;
 
   // Variant Map
-  const variantMap: Record<string, { name: string; value: string }> = {
-    "2c55e14a-6ad8-45e6-afd8-16721cf2edd7": { name: "Select", value: "Single" },
-    "e04d9d0b-4d2e-4c2e-bd16-56b46aa920d6": {
-      name: "Select",
-      value: "Set of 2",
-    },
-  };
+  // const variantMap: Record<string, { name: string; value: string }> = {
+  //   "2c55e14a-6ad8-45e6-afd8-16721cf2edd7": { name: "Select", value: "Single" },
+  //   "e04d9d0b-4d2e-4c2e-bd16-56b46aa920d6": {
+  //     name: "Select",
+  //     value: "Set of 2",
+  //   },
+  // };
 
   // Safely access variantId
-  const variantId = item.catalogReference?.options?.variantId ?? "";
-  const variantDetails = variantMap[variantId] || {
-    name: "Unknown",
-    value: "Unknown",
-  };
+  // const variantId = item.catalogReference?.options?.variantId ?? "";
+  // const variantDetails = variantMap[variantId] || {
+  //   name: "Unknown",
+  //   value: "Unknown",
+  // };
 
   return (
     <li className={styles.cartListItem}>
@@ -282,13 +196,11 @@ function ShoppingCartItem({
           </Link>
         </div>
         <div className={styles.l2}>
-          <Link href={`/shop/${slug}`}>
-            <p className={styles.productName}>
-              {item.productName?.translated || "Item"}
-            </p>
+          <Link href={`/shop/${slug}`} className={styles.productName}>
+            {item.productName?.translated || "Item"}
           </Link>
           {/* Display variant details */}
-          <p className={styles.optionValue}>{variantDetails.value}</p>
+          {/* <p className={styles.optionValue}>{variantDetails.value}</p> */}
           <div className={styles.qtyBtnBox}>
             <button
               disabled={item.quantity === 1}
@@ -337,4 +249,3 @@ function ShoppingCartItem({
     </li>
   );
 }
-

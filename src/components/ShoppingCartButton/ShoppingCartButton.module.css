@@ -201,8 +201,15 @@
   font-family: var(--pretendard);
 }
 
-.checkoutBox {
-  margin-top: 4rem;
+.btnContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+
+.checkoutBox,
+.checkoutBoxii {
   background-color: var(--black);
   color: var(--white);
   display: grid;
@@ -212,8 +219,29 @@
   border-radius: 50px;
   font-size: 1.8rem;
   cursor: pointer;
+  border: 1px solid var(--black);
+  transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
+.checkoutBox:hover, .checkoutBoxii:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.checkoutBoxii {
+  background-color: var(--yellow);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+
+
+@media screen and (max-width: 568px) {
+  .btnContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 @media screen and (max-width: 480px) {
   .cartListItem {
     grid-template-columns: repeat(1, 1fr);

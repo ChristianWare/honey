@@ -8,7 +8,7 @@ import ProductMedia from "../ProductMedia/ProductMedia";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductOptions from "../ProductOptions/ProductOptions";
 import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
-import CollapsibleSection from "@/components/CollapsibleSection/CollapsibleSection";
+// import CollapsibleSection from "@/components/CollapsibleSection/CollapsibleSection";
 import LayoutWrapper from "@/components/LayoutWrapper";
 
 interface ProductDetailsProps {
@@ -164,7 +164,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             <button className={styles.outOfStockButton}>Out of stock</button>
           )}
 
-          <div className={styles.collapsibleSection}>
+          {/* <div className={styles.collapsibleSection}>
             <CollapsibleSection
               title='Warranty'
               content='Your investment in CHUXLY headphones is backed by our unwavering commitment to quality. Every purchase comes with a 90-day warranty, ensuring your audio journey is supported with peace of mind.'
@@ -177,7 +177,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               title='Support'
               content='Download the CHUXLY app now – available on Google Play and the Apple Store. For technical support, please visit our Support page.'
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </LayoutWrapper>

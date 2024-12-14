@@ -5,8 +5,8 @@ import ProductDetails from "./ProductDetails/ProductDetails";
 import { Metadata } from "next";
 import { getWixServerClient } from "@/lib/wix-client.server";
 import TextImageFlip from "@/components/TextImageFlip/TextImageFlip";
-import FlipOne from "../../../../public/images/honey.png";
-import FlipTwo from "../../../../public/images/hero.jpg";
+import FlipOne from "../../../../public/images/contactii.jpg";
+import FlipTwo from "../../../../public/images/aboutii.jpg";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import Nav from "@/components/Nav/Nav";
 
@@ -57,21 +57,22 @@ export default async function Page({ params }: PageProps) {
   return (
     <main>
       <Nav />
-        <div className={styles.topContainer}>
-          <ProductDetails product={product} />
-        </div>
-     
+      <div className={styles.topContainer}>
+        <ProductDetails product={product} />
+      </div>
+
       <TextImageFlip
         src={FlipOne}
-        title='Feel the music, embrace the silence'
-        text="Unlike conventional headphones, CHUXLY's noise-cancelling technology isn't just about silence; it's about elevating your music to new dimensions. By eliminating external disturbances, every note resonates with crystal clarity, and every beat is felt with deep intensity. With CHUXLY, you're not just hearing music –– you're experiencing it in its purest form."
+        title='A sweet touch to every occasion'
+        text="Savor the natural sweetness of raw honeycomb, a delicacy crafted by nature's finest artisans—bees. Packed with golden honey and encased in edible wax, each bite is a perfect blend of chewy texture and rich flavor. Whether drizzled over your favorite foods or enjoyed on its own, our honeycomb elevates any culinary experience."
       />
       <TextImageFlip
         src={FlipTwo}
-        title='Perfect sound, no strings attached'
-        text="Our CHUXLY Bluetooth connection gives you the freedom to explore your auditory universe without any constraints. Whether you're tuning into a playlist or diving into a podcast, your listening experience is transformed into a realm of boundless sound, redefining wireless possibilities with every note."
+        title='Pure honeycomb, pure bliss'
+        text="Our honey isn't just a treat; it's a journey through nature's wonders. Harvested from sustainable hives, this golden nectar is perfect for enhancing teas, breakfasts, or charcuterie boards. From morning rituals to evening indulgences, a spoonful of our honey transforms every moment into something extraordinary."
         flip='flip'
       />
+
       {/* <Witb media={media} itemName={product.name || undefined} /> */}
       <RelatedProducts productId={product._id} />
     </main>

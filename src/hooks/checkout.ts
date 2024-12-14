@@ -4,34 +4,35 @@ import {
   getCheckoutUrlForProduct,
   GetCheckoutUrlForProductValues,
 } from "@/wix-api/checkout";
-import { useState } from "react";
+// import { useState } from "react";
 import toast from "react-hot-toast";
 
 export function useCartCheckout() {
-  const [pending, setPending] = useState(false);
+  // const [pending, setPending] = useState(false);
 
   async function startCheckoutFlow() {
-    setPending(true);
+    // setPending(true);
 
     try {
       const checkoutUrl = await getCheckoutUrlForCurrentCart(wixBrowserClient);
       window.location.href = checkoutUrl;
     } catch (error) {
-      setPending(false);
+      // setPending(false);
       console.error(error);
       toast.error("Failed to load checkout. Please try again.");
     }
   }
 
-  return { startCheckoutFlow, pending };
+  return { startCheckoutFlow };
+  // return { startCheckoutFlow, pending };
 }
 
 export function useQuickBuy() {
 
-  const [pending, setPending] = useState(false);
+  // const [pending, setPending] = useState(false);
 
   async function startCheckoutFlow(values: GetCheckoutUrlForProductValues) {
-    setPending(true);
+    // setPending(true);
 
     try {
       const checkoutUrl = await getCheckoutUrlForProduct(
@@ -40,11 +41,12 @@ export function useQuickBuy() {
       );
       window.location.href = checkoutUrl;
     } catch (error) {
-      setPending(false);
+      // setPending(false);
       console.error(error);
      toast.error("Failed to load checkout. Please try again.");
     }
   }
 
-  return { startCheckoutFlow, pending };
+  // return { startCheckoutFlow, pending };
+  return { startCheckoutFlow };
 }
