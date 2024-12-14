@@ -3,7 +3,7 @@ import styles from "./ProductPreviewSection.module.css";
 import Arrow from "../../../public/icons/leftArrow.svg";
 import Button from "../Button/Button";
 import Image from "next/image";
-import Img1 from "../../../public/images/productPreview.webp";
+import Img1 from "../../../public/images/featuredii.webp";
 import CollapsibleSection from "../CollapsibleSection/CollapsibleSection";
 
 const data = [
@@ -61,7 +61,7 @@ const ProductPreviewSection = () => {
               </div>
             </div>
             <div className={styles.bottomRight}>
-              <h3 className={styles.productHeading}>Glass Filled W/ Honey</h3>
+              <h3 className={styles.productHeading}>Hot Honey</h3>
               <p className={styles.price}>$25.95</p>
               <p className={styles.details}>
                 Famous for world-class honey, Bee Company nurtures thriving
@@ -84,7 +84,11 @@ const ProductPreviewSection = () => {
                 />
               </div>
               <div className={styles.btnContainerii}>
-                <Button href='/shop' text='More Details' btnType='teal' />
+                <Button
+                  href='/shop/hot-honey'
+                  text='More Details'
+                  btnType='teal'
+                />
               </div>{" "}
             </div>
           </div>
