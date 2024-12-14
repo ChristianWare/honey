@@ -9,7 +9,8 @@ import ProductPrice from "../ProductPrice/ProductPrice";
 import ProductOptions from "../ProductOptions/ProductOptions";
 import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
 // import CollapsibleSection from "@/components/CollapsibleSection/CollapsibleSection";
-import LayoutWrapper from "@/components/LayoutWrapper";
+// import LayoutWrapper from "@/components/LayoutWrapper";
+import ContentPadding from "@/components/ContentPadding/ContentPadding";
 
 interface ProductDetailsProps {
   product: products.Product;
@@ -66,9 +67,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     }
   };
 
-
   return (
-    <LayoutWrapper>
+    <ContentPadding>
       <div className={styles.container}>
         <div className={styles.left}>
           <ProductMedia media={selectedMedia} />
@@ -111,6 +111,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               </div>
             </>
           )}
+
           <div className={styles.productOptionsContainer}>
             <ProductOptions
               product={product}
@@ -180,6 +181,6 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           </div> */}
         </div>
       </div>
-    </LayoutWrapper>
+    </ContentPadding>
   );
 }

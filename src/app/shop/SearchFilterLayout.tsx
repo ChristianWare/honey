@@ -89,13 +89,13 @@ export default function SearchFilterLayout({
                     updateFilters({ collection: collectionIds })
                   }
                 />
-                <PriceFilter
+                {/* <PriceFilter
                   minDefaultInput={filters.price_min}
                   maxDefaultInput={filters.price_max}
                   updatePriceRange={(min, max) =>
                     updateFilters({ price_min: min, price_max: max })
                   }
-                />
+                /> */}
                 <SortFilter
                   sort={filters.sort}
                   updateSort={(sort) => updateFilters({ sort })}
@@ -201,65 +201,65 @@ function CollectionsFilter({
   );
 }
 
-interface PriceFilterProps {
-  minDefaultInput: string | undefined;
-  maxDefaultInput: string | undefined;
-  updatePriceRange: (min: string | undefined, max: string | undefined) => void;
-}
+// interface PriceFilterProps {
+//   minDefaultInput: string | undefined;
+//   maxDefaultInput: string | undefined;
+//   updatePriceRange: (min: string | undefined, max: string | undefined) => void;
+// }
 
-function PriceFilter({
-  minDefaultInput,
-  maxDefaultInput,
-  updatePriceRange,
-}: PriceFilterProps) {
-  const [minInput, setMinInput] = useState(minDefaultInput || "");
-  const [maxInput, setMaxInput] = useState(maxDefaultInput || "");
+// function PriceFilter({
+//   minDefaultInput,
+//   maxDefaultInput,
+//   updatePriceRange,
+// }: PriceFilterProps) {
+//   const [minInput, setMinInput] = useState(minDefaultInput || "");
+//   const [maxInput, setMaxInput] = useState(maxDefaultInput || "");
 
-  useEffect(() => {
-    setMinInput(minDefaultInput || "");
-    setMaxInput(maxDefaultInput || "");
-  }, [minDefaultInput, maxDefaultInput]);
+//   useEffect(() => {
+//     setMinInput(minDefaultInput || "");
+//     setMaxInput(maxDefaultInput || "");
+//   }, [minDefaultInput, maxDefaultInput]);
 
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    updatePriceRange(minInput || undefined, maxInput || undefined);
-  }
+//   function onSubmit(e: React.FormEvent) {
+//     e.preventDefault();
+//     updatePriceRange(minInput || undefined, maxInput || undefined);
+//   }
 
-  return (
-    <div className={styles.priceRangeBox}>
-      <h3 className={styles.priceRangeTitle}>Price Range :</h3>
-      <form onSubmit={onSubmit} className={styles.priceRange}>
-        <input
-          type='number'
-          name='min'
-          placeholder='Min Price'
-          value={minInput}
-          onChange={(e) => setMinInput(e.target.value || "")}
-          className={styles.priceInput}
-        />
-        <input
-          type='number'
-          name='max'
-          placeholder='Max Price'
-          value={maxInput}
-          onChange={(e) => setMaxInput(e.target.value || "")}
-          className={styles.priceInput}
-        />
-        <button type='submit' className={styles.goBtn}>
-          Go
-        </button>
-      </form>
-      {(!!minDefaultInput || !!maxDefaultInput) && (
-        <button
-          onClick={() => updatePriceRange(undefined, undefined)}
-          className={styles.clearBtn}
-        >
-          Clear
-        </button>
-      )}
-    </div>
-  );
-}
+//   return (
+//     <div className={styles.priceRangeBox}>
+//       <h3 className={styles.priceRangeTitle}>Price Range :</h3>
+//       <form onSubmit={onSubmit} className={styles.priceRange}>
+//         <input
+//           type='number'
+//           name='min'
+//           placeholder='Min Price'
+//           value={minInput}
+//           onChange={(e) => setMinInput(e.target.value || "")}
+//           className={styles.priceInput}
+//         />
+//         <input
+//           type='number'
+//           name='max'
+//           placeholder='Max Price'
+//           value={maxInput}
+//           onChange={(e) => setMaxInput(e.target.value || "")}
+//           className={styles.priceInput}
+//         />
+//         <button type='submit' className={styles.goBtn}>
+//           Go
+//         </button>
+//       </form>
+//       {(!!minDefaultInput || !!maxDefaultInput) && (
+//         <button
+//           onClick={() => updatePriceRange(undefined, undefined)}
+//           className={styles.clearBtn}
+//         >
+//           Clear
+//         </button>
+//       )}
+//     </div>
+//   );
+// }
 
 interface SortFilterProps {
   sort: string | undefined;

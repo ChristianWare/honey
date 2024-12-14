@@ -75,10 +75,6 @@ const ProductPreviewSection = () => {
               </p>
               <div className={styles.collapsibleSection}>
                 <CollapsibleSection
-                  title='Warranty'
-                  content='Your investment in our honey is backed by our commitment to quality. Every jar is guaranteed to be pure and delicious.'
-                />
-                <CollapsibleSection
                   title='Shipping & delivery'
                   content='We ship our honey worldwide, ensuring it reaches your doorstep fresh and ready to enjoy. All orders are processed promptly.'
                 />

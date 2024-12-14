@@ -8,7 +8,6 @@ import { Suspense } from "react";
 import PageIntro from "@/components/PageIntro/PageIntro";
 import styles from "./SlupPage.module.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
-// import VideoUspiii from "@/components/VideoUspiii/VideoUspiii";
 import Footer from "@/components/Footer/Footer";
 
 interface PageProps {

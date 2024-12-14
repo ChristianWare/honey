@@ -1,6 +1,6 @@
 .section {
   border-bottom: 1px solid var(--olive);
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   width: 100%;
 }
 
@@ -13,8 +13,7 @@
 }
 
 .title {
-  font-weight: bold;
-  margin: 0;
+  font-size: 2rem;
 }
 
 .toggleButton {

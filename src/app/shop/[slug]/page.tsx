@@ -9,6 +9,8 @@ import FlipOne from "../../../../public/images/contactii.jpg";
 import FlipTwo from "../../../../public/images/aboutii.jpg";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import Nav from "@/components/Nav/Nav";
+import CollapsibleSection from "@/components/CollapsibleSection/CollapsibleSection";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -59,6 +61,18 @@ export default async function Page({ params }: PageProps) {
       <Nav />
       <div className={styles.topContainer}>
         <ProductDetails product={product} />
+        <div className={styles.collapsibleSection}>
+          <LayoutWrapper>
+            <CollapsibleSection
+              title='Shipping & delivery'
+              content='We ship our honey worldwide, ensuring it reaches your doorstep fresh and ready to enjoy. All orders are processed promptly.'
+            />
+            <CollapsibleSection
+              title='Support'
+              content="For any questions or concerns, please contact our customer support team. We're always here to help."
+            />
+          </LayoutWrapper>
+        </div>
       </div>
 
       <TextImageFlip
