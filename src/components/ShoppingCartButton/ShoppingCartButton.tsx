@@ -90,7 +90,6 @@ export default function ShoppingCartButton({
                     <p>Your cart is empty</p>
                     <Link
                       href='/shop'
-                      className='text-primary hover:underline'
                       onClick={() => setModalOpen(false)}
                     >
                       Start shopping now

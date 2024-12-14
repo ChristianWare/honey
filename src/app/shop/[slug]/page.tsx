@@ -72,8 +72,6 @@ export default async function Page({ params }: PageProps) {
         text="Our honey isn't just a treat; it's a journey through nature's wonders. Harvested from sustainable hives, this golden nectar is perfect for enhancing teas, breakfasts, or charcuterie boards. From morning rituals to evening indulgences, a spoonful of our honey transforms every moment into something extraordinary."
         flip='flip'
       />
-
-      {/* <Witb media={media} itemName={product.name || undefined} /> */}
       <RelatedProducts productId={product._id} />
     </main>
   );

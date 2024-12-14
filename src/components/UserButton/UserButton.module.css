@@ -3,6 +3,7 @@
   height: 25px;
   color: var(--black);
   cursor: pointer;
+  display: none;
 }
 
 .black {
