@@ -9,6 +9,8 @@ import PageIntro from "@/components/PageIntro/PageIntro";
 import styles from "./SlupPage.module.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import Footer from "@/components/Footer/Footer";
+import NewFaq from "@/components/NewFaq/NewFaq";
+import ContactSection from "@/components/ContactSection/ContactSection";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -37,7 +39,6 @@ export async function generateMetadata({
   };
 }
 
-// Updated Page component
 export default async function Page({ params }: PageProps) {
   const { slug } = await params; // Await the params to access the slug
   const collection = await getCollectionBySlug(
@@ -52,20 +53,14 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main>
-      <PageIntro
-        src={banner}
-        // eyebrow="Experience the CHUXLY difference you've been hearing about"
-        text={categoryName}
-      />
+      <PageIntro src={banner} text={categoryName} />
       <LayoutWrapper>
         <Suspense fallback={"Loading..."}>
           <Products collectionId={collection._id} />
         </Suspense>
-        <br />
-        <br />
-        <br />
-        {/* <VideoUspiii /> */}
       </LayoutWrapper>
+      <NewFaq />
+      <ContactSection />
       <Footer />
     </main>
   );
@@ -75,7 +70,6 @@ interface ProductProps {
   collectionId: string;
 }
 
-// Updated Products component
 async function Products({ collectionId }: ProductProps) {
   const collectionProducts = await queryProducts(await getWixServerClient(), {
     collectionIds: collectionId,

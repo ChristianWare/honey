@@ -31,7 +31,7 @@ export default function Product({ product, isLoading }: ProductProps) {
           mediaIdentifier={mainImage?.url}
           alt={mainImage?.altText}
           width={700}
-          height={700}
+          height={800}
           className={styles.img}
         />
         <div className={styles.infoSection}>
