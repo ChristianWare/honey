@@ -7,7 +7,7 @@ export default async function Layout({
   children,
 }: {
   children: React.ReactNode;
-  pathname?: string;
+  // pathname?: string;
 }) {
   return (
     <div className={styles.container}>

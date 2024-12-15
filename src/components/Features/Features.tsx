@@ -3,6 +3,7 @@ import Calendar from "../../../public/icons/calendar.svg";
 import Rotate from "../../../public/icons/rotate.svg";
 import Mailbox from "../../../public/icons/mailbox.svg";
 import Globe from "../../../public/icons/globe.svg";
+import { JSX } from "react";
 
 interface DataItem {
   id: number;

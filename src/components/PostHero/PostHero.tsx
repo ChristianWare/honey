@@ -8,7 +8,7 @@ const PostHero = () => {
         <div className={styles.content}>
           <div className={styles.left}>
             Do you want access to the best natural honey you can buy? Well
-            you've come to the right place.
+            you&apos;ve come to the right place.
           </div>
           <div className={styles.right}>
             <h2 className={styles.heading}>

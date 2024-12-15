@@ -4,7 +4,7 @@ import Phone from "../../../public/icons/phone.svg";
 import Bluetooth from "../../../public/icons/bluetooth.svg";
 import Volume from "../../../public/icons/volume.svg";
 import LayoutWrapper from "../LayoutWrapper";
-import { ReactNode } from "react";
+import { JSX, ReactNode } from "react";
 
 interface DataItem {
   title: ReactNode;

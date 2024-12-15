@@ -48,9 +48,9 @@ const Quotes = () => {
             </div>
             <div className={styles.right}>
               <h3 className={styles.quote}>
-                &quot;I've been buying honey from this company for years and I'm
-                always impressed with the quality. It's the perfect addition to
-                my tea, yogurt, and baking.&quot;
+                &quot;I&apos;ve been buying honey from this company for years
+                and I&apos;m always impressed with the quality. It&apos;s the
+                perfect addition to my tea, yogurt, and baking.&quot;
               </h3>
               <p className={styles.name}>elle truax</p>
               <p className={styles.title}>
