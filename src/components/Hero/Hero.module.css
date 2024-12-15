@@ -50,7 +50,7 @@
   border-radius: 15px;
   padding: 2rem;
   will-change: transform, opacity;
-  z-index: 999;
+  z-index: 9;
   flex: 4;
   width: 100%;
 }

@@ -63,7 +63,7 @@ const data = [
     src: <Rewire className={styles.icon} />,
   },
   {
-    id: 12,
+    id: 13,
     src: <Valorant className={styles.icon} />,
   },
 ];

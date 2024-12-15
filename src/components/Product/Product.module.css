@@ -20,13 +20,15 @@
   padding: 1rem;
   background-image: repeating-linear-gradient(
     45deg,
-    #0f0c0c,
+    #a88e8e,
     #f1f1f1 1px,
     transparent 0,
     transparent 50%
   );
   background-size: 10px 10px;
 }
+
+
 
 .infoSection {
   display: flex;

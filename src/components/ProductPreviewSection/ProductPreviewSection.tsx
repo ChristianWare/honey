@@ -3,7 +3,7 @@ import styles from "./ProductPreviewSection.module.css";
 import Arrow from "../../../public/icons/leftArrow.svg";
 import Button from "../Button/Button";
 import Image from "next/image";
-import Img1 from "../../../public/images/featuredii.webp";
+import Img1 from "../../../public/images/hotii.jpg";
 import CollapsibleSection from "../CollapsibleSection/CollapsibleSection";
 
 const data = [

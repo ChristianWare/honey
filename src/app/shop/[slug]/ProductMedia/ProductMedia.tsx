@@ -4,7 +4,6 @@ import WixImage from "@/components/WixImage";
 import { products } from "@wix/stores";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-// import Arrow from "../../../../../public/icons/leftArrow.svg";
 
 interface ProductMediaProps {
   media: products.MediaItem[] | undefined;
@@ -49,7 +48,6 @@ export default function ProductMedia({ media }: ProductMediaProps) {
     trackTouch: true,
   });
 
-  console.log(media);
 
   return (
     <div {...swipeHandlers} className={styles.mediaContainer}>
