@@ -26,6 +26,7 @@
 
 .span {
   color: var(--yellow);
+  border-bottom: 2px solid var(--yellow);
 }
 
 @media screen and (max-width: 1268px) {
