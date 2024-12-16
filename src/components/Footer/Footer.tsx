@@ -1,5 +1,6 @@
 import ContentPadding from "../ContentPadding/ContentPadding";
 import NavLogo from "../Nav/NavLogo/NavLogo";
+import TopNav from "../TopNav/TopNav";
 import styles from "./Footer.module.css";
 
 const footerData = [
@@ -9,33 +10,33 @@ const footerData = [
     headingItems: [
       {
         id: 1.1,
-        item: "Contact us",
+        item: "About",
       },
       {
         id: 1.2,
-        item: "Careers",
+        item: "Our Mission",
       },
       {
         id: 1.3,
-        item: "Journal",
+        item: "Our Vision",
       },
     ],
   },
   {
     id: 2,
-    heading: "Products",
+    heading: "Categories",
     headingItems: [
       {
         id: 2.1,
-        item: "Injury Insurance",
+        item: "Whipped Honey",
       },
       {
         id: 2.2,
-        item: "Refund Coverage",
+        item: "Monofloral Honey",
       },
       {
         id: 2.3,
-        item: "Travel Insurance",
+        item: "Honeycomb",
       },
     ],
   },
@@ -49,7 +50,7 @@ const footerData = [
       },
       {
         id: 3.2,
-        item: "Developer Docs",
+        item: "Bee Docs",
       },
       {
         id: 3.3,
@@ -82,7 +83,7 @@ const Footer = () => {
             <NavLogo size='large' iconSize='largeIcon' />
           </div>
           <div className={styles.topRight}>
-            Insurance designed for life in motion.
+            Golden drips of natural delight.
           </div>
         </div>
         <div className={styles.middle}>
@@ -98,15 +99,18 @@ const Footer = () => {
               </ul>
             </div>
           ))}
-          <div>Icons here</div>
+          <div>
+            <TopNav />
+          </div>
         </div>
         <div className={styles.bottom}>
           <p className={styles.disclosures}>
-            Spot Insurance 500 W 2nd St. #1900 Austin, TX 78701 is a Delaware
-            Corporation. Spot Insurance Agency, Inc. is a licensed agent/broker.
-            Our National Producer Number (NPN) is 18724703 and our California
-            license number is 6004685. For additional license information,
-            contact compliance@getspot.com © 2023 Spot Insurance Inc. All rights
+            Golden Drips, an Arizona-based company, proudly supports sustainable
+            beekeeping and the local bee community. Golden Drips is a licensed
+            distributor and retailer of premium honey products, crafted with
+            care to deliver nature’s finest golden sweetness. For inquiries or
+            more information about our products, email us at
+            support@goldendrips.com. © 2025 Golden Drips Honey Co. All rights
             reserved.
           </p>
         </div>

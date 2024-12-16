@@ -3,6 +3,7 @@ import ContactImg from "../../../public/images/contactii.jpg";
 import ContactSection from "@/components/ContactSection/ContactSection";
 import Footer from "@/components/Footer/Footer";
 import NewFaq from "@/components/NewFaq/NewFaq";
+import Unlock from "@/components/Unlock/Unlock";
 
 export default function ContactPage() {
   return (
@@ -14,6 +15,7 @@ export default function ContactPage() {
         hours
       />
       <NewFaq />
+      <Unlock />
       <ContactSection />
       <Footer />
     </main>
