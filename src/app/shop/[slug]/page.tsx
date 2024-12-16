@@ -11,6 +11,8 @@ import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import Nav from "@/components/Nav/Nav";
 import CollapsibleSection from "@/components/CollapsibleSection/CollapsibleSection";
 import LayoutWrapper from "@/components/LayoutWrapper";
+import Unlock from "@/components/Unlock/Unlock";
+import ScrollHorizontalText from "@/components/ScrollHorizontalText/ScrollHorizontalText";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -74,7 +76,6 @@ export default async function Page({ params }: PageProps) {
           </LayoutWrapper>
         </div>
       </div>
-
       <TextImageFlip
         src={FlipOne}
         title='A sweet touch to every occasion'
@@ -86,6 +87,8 @@ export default async function Page({ params }: PageProps) {
         text="Our honey isn't just a treat; it's a journey through nature's wonders. Harvested from sustainable hives, this golden nectar is perfect for enhancing teas, breakfasts, or charcuterie boards. From morning rituals to evening indulgences, a spoonful of our honey transforms every moment into something extraordinary."
         flip='flip'
       />
+      <ScrollHorizontalText text='HONEY DESIGNED FOR YOUR WELLNESS' />{" "}
+      <Unlock />
       <RelatedProducts productId={product._id} />
     </main>
   );
