@@ -1,8 +1,8 @@
+import styles from "./CollectionGroup.module.css";
 import { getWixServerClient } from "@/lib/wix-client.server";
 import { getCollections } from "@/wix-api/collections";
 import Link from "next/link";
 import LayoutWrapper from "../LayoutWrapper";
-import styles from "./CollectionGroup.module.css";
 import Image from "next/image";
 
 export default async function CollectionGroup() {

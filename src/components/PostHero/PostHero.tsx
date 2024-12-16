@@ -1,9 +1,11 @@
 import LayoutWrapper from "../LayoutWrapper";
+import ScrollHorizontalText from "../ScrollHorizontalText/ScrollHorizontalText";
 import styles from "./PostHero.module.css";
 
 const PostHero = () => {
   return (
     <section className={styles.container}>
+      <ScrollHorizontalText text='HONEY DESIGNED FOR YOUR WELLNESS' />{" "}
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>

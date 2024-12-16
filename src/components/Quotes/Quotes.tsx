@@ -26,7 +26,7 @@ const Quotes = () => {
               <h3 className={styles.quote}>
                 &quot;This honey is absolutely divine! The rich, complex flavors
                 are simply amazing. I&apos;ve never tasted anything like
-                it&quot;
+                it.&quot;
               </h3>
               <p className={styles.name}>Bob Stinchcomb</p>
               <p className={styles.title}>

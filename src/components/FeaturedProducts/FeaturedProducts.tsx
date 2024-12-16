@@ -15,7 +15,7 @@ export default async function FeaturedProducts() {
       <section className={styles.container}>
         <LayoutWrapper>
           <div className={styles.content}>
-            <h2 className={styles.heading}>Popular</h2>
+            <h2 className={styles.heading}>Featured Honey</h2>
             <div className={styles.bottom}>
               {[...Array(6)].map((_, index) => (
                 <Product key={index} isLoading />
@@ -52,7 +52,7 @@ export default async function FeaturedProducts() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <h2 className={styles.heading}>Popular</h2>
+          <h2 className={styles.heading}>Featured Honey</h2>
           <div className={styles.bottom}>
             {featuredProducts.items.map((product) => (
               <Product key={product._id} product={product} />

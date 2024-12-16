@@ -45,6 +45,10 @@
 }
 
 @media screen and (max-width: 968px) {
+  .heading {
+    text-align: center;
+  }
+
   .bottomii {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
