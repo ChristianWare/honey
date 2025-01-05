@@ -1,5 +1,8 @@
 .container {
   background-color: var(--tan);
+  background-image: linear-gradient(#d7be91 1px, transparent 1px),
+    linear-gradient(to right, #d7be91 1px, transparent 1px);
+  background-size: 100px 100px;
 }
 
 .top {
@@ -40,6 +43,7 @@
   padding: 3rem;
   border-radius: 15px;
   border: 1px solid var(--black);
+  background-color: var(--tan);
   width: 100%;
   cursor: pointer;
   user-select: none;
