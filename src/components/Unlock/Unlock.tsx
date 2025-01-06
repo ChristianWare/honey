@@ -6,7 +6,7 @@ import Unlock2 from "../../../public/images/monoCat.jpg";
 import Unlock3 from "../../../public/images/whippedCat.jpg";
 import Button from "../Button/Button";
 import ScrollHorizontalText from "../ScrollHorizontalText/ScrollHorizontalText";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 const data = [
   {

@@ -12,7 +12,7 @@ import {
 import { useCartCheckout } from "@/hooks/checkout";
 import { currentCart } from "@wix/ecom";
 import Modal from "../Modal/Modal";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import WixImage from "../WixImage";
 import Cart from "../../../public/icons/cart.svg";
 import Trash from "../../../public/icons/trash.svg";
@@ -88,10 +88,7 @@ export default function ShoppingCartButton({
                 <div>
                   <div>
                     <p>Your cart is empty</p>
-                    <Link
-                      href='/shop'
-                      onClick={() => setModalOpen(false)}
-                    >
+                    <Link href='/shop' onClick={() => setModalOpen(false)}>
                       Start shopping now
                     </Link>
                   </div>

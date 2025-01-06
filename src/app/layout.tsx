@@ -4,6 +4,7 @@ import "./globals.css";
 import ReactQueryProvider from "@/ReactQueryProvider";
 import { Toaster } from "react-hot-toast";
 import { ModalProvider } from "@/context/ModalContext";
+import { ViewTransitions } from "next-view-transitions";
 
 const RaptorMonoSemiBold = localFont({
   src: "../../public/fonts/RaptorMonoSemiBold.woff",
@@ -40,27 +41,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body
-        className={`${RaptorMonoSemiBold.variable} ${RaptorTextSemiBold.variable} ${RaptorMonoMedium.variable} ${RaptorMonoRegular.variable}`}
-      >
-        <ReactQueryProvider>
-          <Toaster
-            position='bottom-right'
-            toastOptions={{
-              className: "toastFont",
-              duration: 6000,
-              style: {
-                border: "1px solid #333438",
-                borderRadius: "5px",
-                textAlign: "center",
-                whiteSpace: "nowrap",
-              },
-            }}
-          />
-          <ModalProvider>{children}</ModalProvider>
-        </ReactQueryProvider>{" "}
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang='en'>
+        <body
+          className={`${RaptorMonoSemiBold.variable} ${RaptorTextSemiBold.variable} ${RaptorMonoMedium.variable} ${RaptorMonoRegular.variable}`}
+        >
+          <ReactQueryProvider>
+            <Toaster
+              position='bottom-right'
+              toastOptions={{
+                className: "toastFont",
+                duration: 6000,
+                style: {
+                  border: "1px solid #333438",
+                  borderRadius: "5px",
+                  textAlign: "center",
+                  whiteSpace: "nowrap",
+                },
+              }}
+            />
+            <ModalProvider>{children}</ModalProvider>
+          </ReactQueryProvider>{" "}
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

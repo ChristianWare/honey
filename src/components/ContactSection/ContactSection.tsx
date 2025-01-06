@@ -1,5 +1,5 @@
 import styles from "./ContactSection.module.css";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import ContactForm from "../ContactForm/ContactForm";
 import LayoutWrapper from "../LayoutWrapper";
 
@@ -16,7 +16,9 @@ const ContactSection = () => {
           </div>
           <p className={styles.copy}>
             Need customer service help?{" "}
-            <Link href='/contact' className={styles.span}>click here</Link>
+            <Link href='/contact' className={styles.span}>
+              click here
+            </Link>
           </p>
         </div>
       </LayoutWrapper>

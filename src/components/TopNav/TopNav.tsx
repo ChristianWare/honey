@@ -1,5 +1,5 @@
 import styles from "./TopNav.module.css";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Insta from "../../../public/icons/instagram.svg";
 import LinkedIn from "../../../public/icons/linkedin.svg";
 import Facebook from "../../../public/icons/facebook.svg";

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import styles from "./Button.module.css";
 import Arrow from "../../../public/icons/leftArrow.svg";
 
@@ -42,7 +42,7 @@ const Button: FC<ButtonProps> = ({
         download={download}
       >
         {pulse && <span className={styles.pulse}></span>} {text}
-     <Arrow className={styles.arrow} />
+        <Arrow className={styles.arrow} />
       </Link>
     </button>
   );

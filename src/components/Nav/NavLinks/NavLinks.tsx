@@ -1,7 +1,8 @@
 "use client";
 
 import styles from "./NavLinks.module.css";
-import Link from "next/link";
+// import { Link } from "next-view-transitions";
+import { Link } from "next-view-transitions";
 import { useEffect, useState } from "react";
 
 interface NavProps {

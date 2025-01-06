@@ -1,5 +1,5 @@
 import styles from "./NavLogo.module.css";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Bee from "../../../../public/icons/bee.svg";
 
 interface NavProps {

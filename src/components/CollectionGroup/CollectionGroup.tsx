@@ -1,12 +1,12 @@
 import styles from "./CollectionGroup.module.css";
 import { getWixServerClient } from "@/lib/wix-client.server";
 import { getCollections } from "@/wix-api/collections";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import LayoutWrapper from "../LayoutWrapper";
 import Image from "next/image";
 
 export default async function CollectionGroup() {
-  const wixClient = await getWixServerClient(); 
+  const wixClient = await getWixServerClient();
 
   const collections = await getCollections(wixClient);
 

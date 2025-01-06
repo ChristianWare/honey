@@ -9,12 +9,14 @@ import ProductPreviewSection from "@/components/ProductPreviewSection/ProductPre
 import Quotes from "@/components/Quotes/Quotes";
 import ScrollLogos from "@/components/ScrollLogos/ScrollLogos";
 import Unlock from "@/components/Unlock/Unlock";
+import Spotlight from "./about/aboutComponents/Spotlight/Spotlight";
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <PostHero />
+      <Spotlight />
       <FeaturedProducts />
       <ProductPreviewSection />
       <GridSection />
