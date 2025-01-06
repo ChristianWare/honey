@@ -15,10 +15,8 @@ const Spotlight = () => {
             on quality, sustainability, and authenticity.
           </h2>
           <div className={styles.nameContainer}>
-            <p className={styles.name}>BRAD HALLIN</p>
-            <p className={styles.title}>
-              MEMBERSHIP & TECHNICAL DIRECTOR AT USA BMX
-            </p>
+            <p className={styles.name}>BRAD McIntosh</p>
+            <p className={styles.title}>Founder & CEO of Golden Drips</p>
           </div>
         </div>
       </LayoutWrapper>
