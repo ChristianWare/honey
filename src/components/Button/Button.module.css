@@ -16,9 +16,9 @@
   text-transform: uppercase;
   flex: 1;
   gap: 2rem;
-  padding: 8px 30px;
-    border-radius: 6px;
-
+  padding: 10px 30px;
+  border-radius: 6px;
+  overflow: hidden;
   position: relative;
   z-index: 1;
   width: 100%;

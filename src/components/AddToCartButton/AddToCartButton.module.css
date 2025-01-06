@@ -1,20 +1,54 @@
 .btn {
-  background-color: var(--black);
-  color: var(--white);
+  font-family: var(--RaptorMonoMedium);
+  text-align: center;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  flex: 1;
   gap: 2rem;
+  padding: 10px 30px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
   width: 100%;
-  padding: 1.5rem 3rem;
-  border-radius: 50px;
+  clip-path: polygon(
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%,
+    0 10px
+  );
+  background-color: var(--black);
+  color: var(--yellow);
   cursor: pointer;
-  transition: all 0.2s ease-in;
-  font-size: 2rem;
-  border: 1px solid var(--black);
+  transition: color 0.2s ease-in, border-color 0.2s ease-in;
+}
+
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -105%;
+  width: 105%;
+  height: 105%;
+  background-color: var(--black);
+  z-index: -1;
+  transition: transform 0.2s ease-in;
+  transform: translateX(0);
+}
+
+.btn:hover::before {
+  transform: translateX(100%);
 }
 
 .btn:hover {
-  background-color: var(--yellow);
-  color: var(--black);
+  color: var(--yellow);
 }
